@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sentinel robot | Mykola Matsiuk</title>
-  <meta name="description" content="E3 Sentinel and Scout, a robot duo that monitors the MakerSpace.">
+  <meta name="description" content="E3 Sentinel and Scout, a robot duo that monitors the MakerSpace. CAD and manufacturing by Mykola Matsiuk.">
   <link rel="icon" href="data:,">
+  <link rel="preload" href="../fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -17,85 +19,128 @@
         <ul>
           <li><a href="../index.html">Home</a></li>
           <li><a href="../about.html">About</a></li>
-          <li><a href="index.html" aria-current="true">Projects</a></li>
+          <li><a href="../projects/index.html" aria-current="true">Projects</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="wrap">
-    <div class="project-head">
-      <div>
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Projects</a> <span aria-hidden="true">/</span> 01 Robotics</nav>
-        <h1>Sentinel robot</h1>
-        <p class="lead">E3 Sentinel and Scout are a robot duo that monitors the MakerSpace so you don't have to.</p>
-      </div>
-      <table class="title-block">
-        <tbody>
+  <main id="main">
+    <section class="page-head page-head--sentinel on-dark">
+      <div class="page-head-bg" aria-hidden="true"></div>
+      <div class="wrap page-head-inner">
+        <div class="page-head-text">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Projects</a> <span aria-hidden="true">/</span> 01 · Robotics</nav>
+          <h1>Sentinel robot</h1>
+          <p class="lead">E3 Sentinel and Scout are a robot duo that monitors the MakerSpace, so nobody has to. I did all the CAD and manufacturing; teammates built the electronics and software.</p>
+        </div>
+        <table class="title-block">
+          <tbody>
           <tr><th scope="row">Status</th><td><span class="status">Finished</span></td></tr>
           <tr><th scope="row">Version</th><td>V1, built in 2 days</td></tr>
           <tr><th scope="row">Dates</th><td><span class="todo">TODO: start and end dates</span></td></tr>
-          <tr><th scope="row">My role</th><td>All CAD and manufacturing: design, 3D printing and post-processing</td></tr>
-          <tr><th scope="row">Team</th><td>Other members did the electronics and software</td></tr>
-        </tbody>
-      </table>
-    </div>
+          <tr><th scope="row">My role</th><td>CAD and manufacturing: design, 3D printing, post-processing</td></tr>
+          <tr><th scope="row">Team</th><td>Electronics and software by other team members</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
+    <div class="wrap doc">
     <figure class="cover">
       <img src="../images/sentinel/sentinel-stand.jpg" width="1080" height="1000" alt="Sentinel, a white 3D-printed robot with a touchscreen, and Scout, a small round white robot, on a table at the Trinity Robotics stand.">
       <figcaption><b>Fig. 1</b> · Sentinel (right) and Scout (centre) on show at the Trinity Robotics stand.</figcaption>
     </figure>
 
-    <h2>What it does</h2>
-    <ul>
-      <li>Detects smoke and solder fumes</li>
-      <li>Tracks humidity</li>
-      <li>Reacts with animated expressions</li>
-      <li>Buzzes when something is wrong</li>
-    </ul>
+    <section class="doc-section">
+      <h2>What it does</h2>
+      <div class="doc-body">
+        <ul>
+          <li>Detects smoke and solder fumes</li>
+          <li>Tracks humidity</li>
+          <li>Shows how things are with animated facial expressions</li>
+          <li>Buzzes when something is wrong</li>
+        </ul>
+        <p>This is version 1, built in two days. It is only getting better from here.</p>
+      </div>
+    </section>
 
-    <h2>Goal and constraints</h2>
-    <p><span class="todo">TODO: goal and requirements</span></p>
+    <section class="doc-section">
+      <h2>Goal and constraints</h2>
+      <div class="doc-body">
+        <p><span class="todo">TODO: goal and requirements</span></p>
+      </div>
+    </section>
 
-    <h2>Design</h2>
-    <h3>Mechanical (my work)</h3>
-    <p>I did all the CAD and manufacturing. <span class="todo">TODO: design decisions and why you made them</span></p>
-    <h3>Electronics and software (other team members)</h3>
-    <p>The electronics include an ESP32, a Raspberry Pi, sensors and displays.</p>
+    <section class="doc-section">
+      <h2>Design</h2>
+      <div class="doc-body">
+        <h3>My part: mechanical</h3>
+        <p>I did all the CAD and manufacturing: designing the parts in SolidWorks, 3D printing them and post-processing them. <span class="todo">TODO: design decisions and why you made them</span></p>
+        <h3>Team: electronics and software</h3>
+        <p>Built by other team members, using an ESP32, a Raspberry Pi, sensors and displays.</p>
+        <div class="gallery">
+        <figure>
+          <img src="../images/sentinel/sentinel-dashboard.jpg" width="1320" height="1200" loading="lazy" alt="Close-up of Sentinel's screen: a smiling robot face marked OKAY next to TVOC, eCO2, temperature and humidity panels.">
+          <figcaption><b>Fig. 2</b> · Sentinel's screen: a face that reacts to conditions, beside live TVOC, eCO2, temperature and humidity panels.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/sentinel/scout.jpg" width="1000" height="1170" loading="lazy" alt="Scout, a small white 3D-printed robot with a round head, a speaker grille and a dark base, held in one hand.">
+          <figcaption><b>Fig. 3</b> · Scout, the smaller robot of the duo, 3D printed in PLA.</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
 
-    <div class="gallery">
-      <figure>
-        <img src="../images/sentinel/sentinel-dashboard.jpg" width="1320" height="1200" loading="lazy" alt="Close-up of Sentinel's screen: a smiling robot face marked OKAY next to TVOC, eCO2, temperature and humidity panels.">
-        <figcaption><b>Fig. 2</b> · Sentinel's screen: a face that reacts to conditions, with live TVOC, eCO2, temperature and humidity panels.</figcaption>
-      </figure>
-      <figure>
-        <img src="../images/sentinel/scout.jpg" width="1000" height="1170" loading="lazy" alt="Scout, a small white 3D-printed robot with a round head, a speaker grille and a dark base, held in one hand.">
-        <figcaption><b>Fig. 3</b> · Scout, the smaller robot of the duo, 3D printed in PLA.</figcaption>
-      </figure>
+    <section class="doc-section">
+      <h2>Build</h2>
+      <div class="doc-body">
+        <table class="title-block">
+          <tbody>
+          <tr><th scope="row">Material</th><td>PLA</td></tr>
+          <tr><th scope="row">Process</th><td>3D printing and post-processing</td></tr>
+          <tr><th scope="row">Software</th><td>SolidWorks, Bambu Lab slicer</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>Specs</h2>
+      <div class="doc-body">
+        <p><span class="todo">TODO: specs with units</span></p>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>Testing and results</h2>
+      <div class="doc-body">
+        <p><span class="todo">TODO</span></p>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>Problems and how I solved them</h2>
+      <div class="doc-body">
+        <p><span class="todo">TODO</span></p>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <h2>What I'd do differently</h2>
+      <div class="doc-body">
+        <p><span class="todo">TODO</span></p>
+      </div>
+    </section>
     </div>
 
-    <h2>Build</h2>
-    <table class="title-block">
-      <tbody>
-        <tr><th scope="row">Material</th><td>PLA</td></tr>
-        <tr><th scope="row">Process</th><td>3D printing</td></tr>
-        <tr><th scope="row">Software</th><td>SolidWorks, Bambu Lab slicer</td></tr>
-      </tbody>
-    </table>
-
-    <h2>Specs</h2>
-    <p><span class="todo">TODO: specs with units</span></p>
-
-    <h2>Testing and results</h2>
-    <p><span class="todo">TODO</span></p>
-
-    <h2>Problems and fixes</h2>
-    <p><span class="todo">TODO</span></p>
-
-    <h2>What I would change</h2>
-    <p><span class="todo">TODO</span></p>
-
-    <p class="back"><a class="button" href="index.html">&larr; All projects</a></p>
+    <nav class="pager wrap" aria-label="More projects">
+        <span></span>
+        <a class="pager-link pager-next" href="glider-2m.html">
+          <span class="pager-label">Next project →</span>
+          <span class="pager-title">2 m glider</span>
+        </a>
+    </nav>
   </main>
 
   <footer class="site-footer">
@@ -105,7 +150,7 @@
         <li><a class="button" href="mailto:matsiukm@tcd.ie">matsiukm@tcd.ie</a></li>
         <li><a class="button" href="https://www.linkedin.com/in/mykola-matsiuk-b7b0a23a3">LinkedIn</a></li>
       </ul>
-      <p class="footer-meta">Mykola Matsiuk · Engineering (TR032), Trinity College Dublin</p>
+      <p class="footer-meta">Mykola Matsiuk · Mechanical Engineering, Trinity College Dublin</p>
     </div>
   </footer>
   <script src="../js/vendor/gsap.min.js" defer></script>

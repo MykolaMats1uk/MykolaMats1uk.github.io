@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About | Mykola Matsiuk</title>
-  <meta name="description" content="Education, experience and societies of Mykola Matsiuk.">
+  <meta name="description" content="About Mykola Matsiuk: education, awards, certifications, experience, skills and languages.">
   <link rel="icon" href="data:,">
+  <link rel="preload" href="fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,65 +25,124 @@
     </div>
   </header>
 
-  <main id="main" class="wrap">
-    <h1>About</h1>
-    <figure class="portrait about-portrait">
-      <img src="images/profile/mykola-matsiuk.jpg" width="800" height="800" loading="lazy" alt="Portrait of Mykola Matsiuk in a white shirt.">
-    </figure>
+  <main id="main">
+    <section class="page-head page-head--about on-dark">
+      <div class="page-head-bg" aria-hidden="true"></div>
+      <div class="wrap page-head-inner">
+        <div class="page-head-text">
+          <h1>About me</h1>
+          <p class="lead">Second-year Mechanical Engineering student at Trinity College Dublin. I design, build and test RC aircraft and wearables, and I'm looking for an engineering internship in Ireland for summer 2027.</p>
+          <ul class="actions">
+            <li><a class="button button-primary" href="mailto:matsiukm@tcd.ie">Email me</a></li>
+            <li><a class="button" href="https://www.linkedin.com/in/mykola-matsiuk-b7b0a23a3">LinkedIn</a></li>
+          </ul>
+        </div>
+        <figure class="portrait">
+          <img src="images/profile/mykola-matsiuk.jpg" width="800" height="800" alt="Portrait of Mykola Matsiuk in a white shirt.">
+        </figure>
+      </div>
+    </section>
 
-    <h2>Education</h2>
-    <h3>Trinity College Dublin</h3>
-    <p>Mechanical Engineering, Engineering (TR032) programme, second year. Started 2025, expected graduation 2029.</p>
-    <h3>De La Salle College, Dundalk</h3>
-    <p><span class="todo">TODO: dates (optional)</span></p>
+    <div class="wrap doc">
+    <section class="doc-section">
+      <h2>Education</h2>
+      <div class="doc-body">
+        <div class="entry">
+          <h3>Trinity College Dublin</h3>
+          <p class="entry-meta">2025 – 2029 (expected)</p>
+          <p>Mechanical Engineering, on the Engineering (TR032) programme. Now in second year.</p>
+        </div>
+        <div class="entry">
+          <h3>De La Salle College, Dundalk</h3>
+          <p class="entry-meta"><span class="todo">TODO: dates (optional)</span></p>
+          <p>Earlier education.</p>
+        </div>
+      </div>
+    </section>
 
-    <h2>Awards and recognition</h2>
-    <ul>
-      <li>All Ireland Scholar 2025</li>
-      <li>Junior Academy of Sciences of Ukraine (Maths)</li>
-    </ul>
+    <section class="doc-section">
+      <h2>Awards and recognition</h2>
+      <div class="doc-body">
+        <ul>
+          <li>All Ireland Scholar 2025</li>
+          <li>Junior Academy of Sciences of Ukraine (Maths)</li>
+        </ul>
+      </div>
+    </section>
 
-    <h2>Certifications</h2>
-    <table class="title-block">
-      <tbody>
-        <tr><th scope="row">AI</th><td>Google AI Essentials</td></tr>
-        <tr><th scope="row">Driving</th><td>Category B driving licence</td></tr>
-      </tbody>
-    </table>
+    <section class="doc-section">
+      <h2>Certifications</h2>
+      <div class="doc-body">
+        <ul>
+          <li>Google AI Essentials</li>
+          <li>Category B driving licence</li>
+        </ul>
+      </div>
+    </section>
 
-    <h2>Experience</h2>
-    <h3>Construction, Retrofit Limited</h3>
-    <p>2 years. <span class="todo">TODO: role, dates and what you did</span></p>
-    <h3>Shop assistant, Krakowiak</h3>
-    <p>1 year. <span class="todo">TODO: dates and what you did</span></p>
+    <section class="doc-section">
+      <h2>Experience</h2>
+      <div class="doc-body">
+        <div class="entry">
+          <h3>Construction</h3>
+          <p class="entry-meta">Retrofit Limited · 2 years</p>
+          <p><span class="todo">TODO: role, dates and what you did</span></p>
+        </div>
+        <div class="entry">
+          <h3>Shop assistant</h3>
+          <p class="entry-meta">Krakowiak · 1 year</p>
+          <p><span class="todo">TODO: dates and what you did</span></p>
+        </div>
+      </div>
+    </section>
 
-    <h2>Societies and teams</h2>
-    <h3>Robotics team</h3>
-    <p>Builder, since November 2026.</p>
+    <section class="doc-section">
+      <h2>Teams</h2>
+      <div class="doc-body">
+        <div class="entry">
+          <h3>Robotics team</h3>
+          <p class="entry-meta">Builder · since November 2026</p>
+          
+        </div>
+      </div>
+    </section>
 
-    <h2>Skills</h2>
-    <table class="title-block">
-      <tbody>
-        <tr><th scope="row">CAD and simulation</th><td>SolidWorks, Fusion 360, XFLR5, topology optimisation</td></tr>
-        <tr><th scope="row">Programming</th><td>Python</td></tr>
-        <tr><th scope="row">Electronics</th><td><span class="todo">TODO</span></td></tr>
-        <tr><th scope="row">Workshop and manufacturing</th><td>3D printing (Bambu Lab slicer), laser cutting, composites, balsa and foam construction</td></tr>
-      </tbody>
-    </table>
+    <section class="doc-section">
+      <h2>Skills</h2>
+      <div class="doc-body">
+        <table class="title-block">
+          <tbody>
+          <tr><th scope="row">CAD and simulation</th><td>SolidWorks, Fusion 360, XFLR5, topology optimisation</td></tr>
+          <tr><th scope="row">Programming</th><td>Python</td></tr>
+          <tr><th scope="row">Electronics</th><td><span class="todo">TODO</span></td></tr>
+          <tr><th scope="row">Workshop and manufacturing</th><td>3D printing (Bambu Lab), laser cutting, composites, balsa and foam construction</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-    <h2>Languages</h2>
-    <table class="title-block">
-      <tbody>
-        <tr><th scope="row">Ukrainian</th><td>Native or bilingual</td></tr>
-        <tr><th scope="row">Russian</th><td>Native or bilingual</td></tr>
-        <tr><th scope="row">English</th><td>Full professional proficiency</td></tr>
-        <tr><th scope="row">Polish</th><td>Limited working proficiency</td></tr>
-        <tr><th scope="row">German</th><td>Elementary proficiency</td></tr>
-      </tbody>
-    </table>
+    <section class="doc-section">
+      <h2>Languages</h2>
+      <div class="doc-body">
+        <table class="title-block">
+          <tbody>
+          <tr><th scope="row">Ukrainian</th><td>Native</td></tr>
+          <tr><th scope="row">Russian</th><td>Native</td></tr>
+          <tr><th scope="row">English</th><td>Full professional</td></tr>
+          <tr><th scope="row">Polish</th><td>Limited working</td></tr>
+          <tr><th scope="row">German</th><td>Elementary</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-    <h2>CV</h2>
-    <p><span class="todo">TODO: add CV as a PDF</span></p>
+    <section class="doc-section">
+      <h2>CV</h2>
+      <div class="doc-body">
+        <p><span class="todo">TODO: add CV as a PDF</span></p>
+      </div>
+    </section>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -91,7 +152,7 @@
         <li><a class="button" href="mailto:matsiukm@tcd.ie">matsiukm@tcd.ie</a></li>
         <li><a class="button" href="https://www.linkedin.com/in/mykola-matsiuk-b7b0a23a3">LinkedIn</a></li>
       </ul>
-      <p class="footer-meta">Mykola Matsiuk · Engineering (TR032), Trinity College Dublin</p>
+      <p class="footer-meta">Mykola Matsiuk · Mechanical Engineering, Trinity College Dublin</p>
     </div>
   </footer>
   <script src="js/vendor/gsap.min.js" defer></script>
