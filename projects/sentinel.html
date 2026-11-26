@@ -24,23 +24,26 @@
   </header>
 
   <main id="main" class="wrap">
-    <p class="label">Project</p>
-    <h1>Sentinel robot</h1>
-    <p class="lead">E3 Sentinel and Scout are a robot duo that monitors the MakerSpace so you don't have to.</p>
+    <div class="project-head">
+      <div>
+        <p class="label">Project 01 · Robotics</p>
+        <h1>Sentinel robot</h1>
+        <p class="lead">E3 Sentinel and Scout are a robot duo that monitors the MakerSpace so you don't have to.</p>
+      </div>
+      <table class="title-block">
+        <tbody>
+          <tr><th scope="row">Status</th><td><span class="status">Finished</span></td></tr>
+          <tr><th scope="row">Version</th><td>V1, built in 2 days</td></tr>
+          <tr><th scope="row">Dates</th><td><span class="todo">TODO: start and end dates</span></td></tr>
+          <tr><th scope="row">My role</th><td>All CAD and manufacturing: design, 3D printing and post-processing</td></tr>
+          <tr><th scope="row">Team</th><td>Other members did the electronics and software</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <table class="title-block">
-      <tbody>
-        <tr><th scope="row">Status</th><td><span class="status">Finished</span></td></tr>
-        <tr><th scope="row">Version</th><td>V1, built in 2 days</td></tr>
-        <tr><th scope="row">Dates</th><td><span class="todo">TODO: start and end dates</span></td></tr>
-        <tr><th scope="row">My role</th><td>All CAD and manufacturing: design, 3D printing and post-processing</td></tr>
-        <tr><th scope="row">Team</th><td>Other members did the electronics and software</td></tr>
-      </tbody>
-    </table>
-
-    <figure>
-      <div class="placeholder"><span class="todo">TODO: photo of the robots</span></div>
-      <figcaption>Fig. 1: <span class="todo">TODO: caption</span></figcaption>
+    <figure class="cover">
+      <img src="../images/sentinel/sentinel-stand.jpg" width="1080" height="1000" alt="Sentinel, a white 3D-printed robot with a touchscreen, and Scout, a small round white robot, on a table at the Trinity Robotics stand.">
+      <figcaption><b>Fig. 1</b> · Sentinel (right) and Scout (centre) on show at the Trinity Robotics stand.</figcaption>
     </figure>
 
     <h2>What it does</h2>
@@ -59,6 +62,17 @@
     <p>I did all the CAD and manufacturing. <span class="todo">TODO: design decisions and why you made them</span></p>
     <h3>Electronics and software (other team members)</h3>
     <p>The electronics include an ESP32, a Raspberry Pi, sensors and displays.</p>
+
+    <div class="gallery">
+      <figure>
+        <img src="../images/sentinel/sentinel-dashboard.jpg" width="1320" height="1200" loading="lazy" alt="Close-up of Sentinel's screen: a smiling robot face marked OKAY next to TVOC, eCO2, temperature and humidity panels.">
+        <figcaption><b>Fig. 2</b> · Sentinel's screen: a face that reacts to conditions, with live TVOC, eCO2, temperature and humidity panels.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/sentinel/scout.jpg" width="1000" height="1170" loading="lazy" alt="Scout, a small white 3D-printed robot with a round head, a speaker grille and a dark base, held in one hand.">
+        <figcaption><b>Fig. 3</b> · Scout, the smaller robot of the duo, 3D printed in PLA.</figcaption>
+      </figure>
+    </div>
 
     <h2>Build</h2>
     <table class="title-block">
@@ -81,14 +95,17 @@
     <h2>What I would change</h2>
     <p><span class="todo">TODO</span></p>
 
-    <p><a href="index.html">All projects</a></p>
+    <p class="back"><a class="button" href="index.html">&larr; All projects</a></p>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>Mykola Matsiuk</p>
-      <p><a href="mailto:matsiukm@tcd.ie">matsiukm@tcd.ie</a></p>
-      <p><a href="https://www.linkedin.com/in/mykola-matsiuk-b7b0a23a3">LinkedIn</a></p>
+      <p class="footer-cta">Hiring a summer 2027 engineering intern?</p>
+      <ul class="actions">
+        <li><a class="button" href="mailto:matsiukm@tcd.ie">matsiukm@tcd.ie</a></li>
+        <li><a class="button" href="https://www.linkedin.com/in/mykola-matsiuk-b7b0a23a3">LinkedIn</a></li>
+      </ul>
+      <p class="footer-meta">Mykola Matsiuk · Engineering (TR032), Trinity College Dublin</p>
     </div>
   </footer>
   <script src="../js/vendor/gsap.min.js" defer></script>

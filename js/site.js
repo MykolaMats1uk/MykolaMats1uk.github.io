@@ -27,13 +27,26 @@
     scrollTrigger: { start: 0, end: 'max', scrub: true }
   });
 
-  // Intro: label, heading and lead slide in on load.
-  gsap.from('main > .label, main > h1, main > .lead', {
-    y: 16,
+  var ease = 'power3.out';
+
+  // Intro: label, heading, lead and buttons slide in on load.
+  gsap.from('.hero > div > *, .project-head > div > *, main > .label, main > h1, main > .lead', {
+    y: 24,
     autoAlpha: 0,
-    duration: 0.6,
-    ease: 'power2.out',
+    duration: 0.8,
+    ease: ease,
     stagger: 0.08
+  });
+
+  // Large photos open like a drawing being unrolled, from top to bottom.
+  gsap.utils.toArray('.hero-figure img, .cover img, .cover .sheet').forEach(function (el) {
+    gsap.from(el, {
+      clipPath: 'inset(0 0 100% 0)',
+      duration: 1.1,
+      ease: 'power3.inOut',
+      delay: 0.2,
+      scrollTrigger: { trigger: el, start: 'top 90%', once: true }
+    });
   });
 
   // Title block: rows appear one after another, like a drawing sheet being filled in.
@@ -44,29 +57,36 @@
       duration: 0.4,
       ease: 'power2.out',
       stagger: 0.06,
-      scrollTrigger: { trigger: table, start: 'top 85%', once: true }
+      scrollTrigger: { trigger: table, start: 'top 88%', once: true }
     });
   });
 
-  // Section headings and figures fade up as they enter the screen.
-  gsap.utils.toArray('main h2, main figure').forEach(function (el) {
+  // Project rows: photo and text come in from opposite sides.
+  gsap.utils.toArray('.project-row').forEach(function (row) {
+    var tl = gsap.timeline({ scrollTrigger: { trigger: row, start: 'top 80%', once: true } });
+    tl.from(row.querySelector('.project-media'), { y: 40, autoAlpha: 0, duration: 0.8, ease: ease })
+      .from(row.querySelectorAll('.project-media + div > *'), { y: 20, autoAlpha: 0, duration: 0.6, ease: ease, stagger: 0.07 }, '-=0.5');
+  });
+
+  // Section headings, stand-alone headings and gallery figures fade up.
+  gsap.utils.toArray('.section-head, main > h2, .gallery figure, main > figure:not(.cover)').forEach(function (el) {
     gsap.from(el, {
-      y: 20,
+      y: 24,
       autoAlpha: 0,
-      duration: 0.6,
-      ease: 'power2.out',
+      duration: 0.7,
+      ease: ease,
       scrollTrigger: { trigger: el, start: 'top 88%', once: true }
     });
   });
 
-  // Project cards come in as a staggered group.
-  gsap.utils.toArray('.cards').forEach(function (list) {
+  // Numbered interests tick in one by one.
+  gsap.utils.toArray('.numbered').forEach(function (list) {
     gsap.from(list.children, {
-      y: 24,
+      y: 16,
       autoAlpha: 0,
-      duration: 0.6,
-      ease: 'power2.out',
-      stagger: 0.1,
+      duration: 0.5,
+      ease: ease,
+      stagger: 0.07,
       scrollTrigger: { trigger: list, start: 'top 85%', once: true }
     });
   });

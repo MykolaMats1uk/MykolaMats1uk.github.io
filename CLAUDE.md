@@ -57,4 +57,8 @@ Engineering report meets drawing sheet: clean and technical, not generic.
 - Project pages open with a "title block" table (status, dates, role, key specs), followed by numbered figures with captions.
 - Status is written out as "Finished" or "In progress", never shown by colour alone.
 - One column on phones, wider grids on larger screens.
+- Photo-led and bold, after the reference portfolios katieheinemann.space, davisryan.tech and ramitkrishnan.com: a large-name hero with a photo, numbered section heads ("01 Projects"), project rows that alternate photo and text sides with big titles and "View project" buttons, numbered interest lists, and a dark footer with a contact call to action.
+- Project pages: heading and title block side by side on desktop, then a large cover photo, then sections with a two-column gallery of numbered figures.
+- Projects without photos show an empty drawing-sheet grid with a TODO, never a stock image.
+- Photos of events: blur or crop out bystanders and anything identifying, such as number plates, before adding them.
 - No gradients, heavy shadows, stock icons or skill percentage bars.
