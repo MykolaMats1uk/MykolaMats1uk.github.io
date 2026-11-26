@@ -61,12 +61,12 @@
   }
 
   // Intro: heading, lead and buttons slide in on load.
-  gsap.from('.hero-text > *, .project-head > div > *, main > h1, main > .lead', {
+  gsap.from('.hero-text > *, .page-head-text > *, main > h1, main > .lead', {
     y: 24, autoAlpha: 0, duration: 0.8, ease: ease, stagger: 0.08, delay: draw ? 0.5 : 0
   });
 
   // Photo backgrounds drift slower than the page, so the bands feel layered.
-  gsap.utils.toArray('.hero-bg, .band-bg').forEach(function (bg) {
+  gsap.utils.toArray('.hero-bg, .band-bg, .page-head-bg').forEach(function (bg) {
     gsap.fromTo(bg, { yPercent: -6 }, {
       yPercent: 6,
       ease: 'none',
@@ -98,7 +98,7 @@
   });
 
   // Section headings, bio, stand-alone headings and gallery figures fade up.
-  gsap.utils.toArray('.section-head, .bio-text, .fact-card, main > h2, .gallery figure').forEach(function (el) {
+  gsap.utils.toArray('.section-head, .bio-text, .fact-card, main > h2, .doc-section, .gallery figure, .pager').forEach(function (el) {
     reveal(el, el, { y: 20, autoAlpha: 0, duration: 0.7, ease: ease });
   });
 

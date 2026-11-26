@@ -1,6 +1,19 @@
 /* Mobile first: base styles target phones; min-width queries add wider layouts.
    Look: engineering report meets drawing sheet, with large type and photo-led projects. */
 
+/* Fonts: self-hosted in /fonts (SIL Open Font License), no external requests.
+   Archivo for headings, IBM Plex Sans for text, IBM Plex Mono for specs, dates and figure labels. */
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 600 800; font-display: swap; src: url("../fonts/archivo-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Archivo"; font-style: normal; font-weight: 600 800; font-display: swap; src: url("../fonts/archivo-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400 600; font-display: swap; src: url("../fonts/ibm-plex-sans-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400 600; font-display: swap; src: url("../fonts/ibm-plex-sans-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "IBM Plex Sans"; font-style: italic; font-weight: 400 600; font-display: swap; src: url("../fonts/ibm-plex-sans-italic-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "IBM Plex Sans"; font-style: italic; font-weight: 400 600; font-display: swap; src: url("../fonts/ibm-plex-sans-italic-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/ibm-plex-mono-400-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("../fonts/ibm-plex-mono-400-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/ibm-plex-mono-500-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url("../fonts/ibm-plex-mono-500-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
 /* Colour: warm tones sampled from the portrait (images/profile/mykola-matsiuk.jpg).
    Cream paper from the shirt, espresso text from the dark background, sand and skin
    tones for panels and lines, and one copper accent from the warm lights behind.
@@ -22,8 +35,9 @@
   --muted-on-dark: #d8c3b1; /* secondary text on dark, 10.3:1 */
   --line-on-dark: #5a4a42;
   --accent-bright: #e0905a; /* copper lit up for dark backgrounds, 7.0:1 */
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --display: "Archivo", "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, Menlo, monospace;
   --gutter: 1rem;
 }
 
@@ -582,7 +596,7 @@ h1 + .lead + .project-list { margin-top: 2.5rem; }
 
 .cover { margin: 1.5rem 0 0; }
 
-.cover .sheet { aspect-ratio: 16 / 9; border: 1px solid var(--line); }
+.cover .sheet { aspect-ratio: 3 / 1; min-height: 10rem; border: 1px solid var(--line); }
 
 .cover img {
   width: 100%;
@@ -719,4 +733,215 @@ html.lenis body { height: auto; }
 @media (prefers-reduced-motion: reduce) {
   .project-card .thumb { transition: none; }
   .project-card:hover .thumb { transform: none; }
+}
+
+/* =====================================================================
+   Typography pass: display face for headings, text face for UI.
+   Monospace is kept for data only (specs, dates, figure labels, meta).
+   ===================================================================== */
+body { line-height: 1.65; font-kerning: normal; text-rendering: optimizeLegibility; }
+
+h1, h2, h3, .site-name, .footer-cta, .pager-title, .project-title, .bio-intro {
+  font-family: var(--display);
+  text-wrap: balance;
+}
+
+h1, .hero h1 { font-weight: 800; letter-spacing: -0.035em; }
+h2 { font-weight: 700; letter-spacing: -0.02em; }
+h3 { font-weight: 700; letter-spacing: -0.005em; }
+.bio-text .bio-intro { font-weight: 600; letter-spacing: -0.02em; }
+p { text-wrap: pretty; }
+
+.site-name { font-weight: 800; letter-spacing: -0.01em; }
+
+.site-nav a,
+.button {
+  font-family: var(--sans);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.site-nav a { font-size: 0.9375rem; }
+.button { font-size: 0.9375rem; }
+
+.title-block td, .entry-meta, .project-meta { font-variant-numeric: tabular-nums; }
+
+/* =====================================================================
+   Inner pages: dark photo header band
+   ===================================================================== */
+.page-head {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--dark);
+  color: var(--on-dark);
+}
+
+.page-head-bg {
+  position: absolute;
+  inset: -12% 0;
+  z-index: -1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-head-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 24, 21, 0.8);
+}
+
+.page-head--sentinel .page-head-bg { background-image: url("../images/backgrounds/sentinel.jpg"); }
+.page-head--glider2 .page-head-bg { background-image: url("../images/backgrounds/wing-structure.jpg"); }
+.page-head--projects .page-head-bg { background-image: url("../images/backgrounds/parts.jpg"); }
+.page-head--about .page-head-bg { background-image: url("../images/backgrounds/stand.jpg"); }
+
+/* The 3 m glider has no photos yet: a plain drawing-sheet grid instead of a borrowed picture */
+.page-head--glider3 .page-head-bg {
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 39px, rgba(224, 144, 90, 0.12) 39px 40px),
+    repeating-linear-gradient(90deg, transparent 0 39px, rgba(224, 144, 90, 0.12) 39px 40px);
+}
+
+.page-head--glider3 .page-head-bg::after { background: transparent; }
+
+.page-head-inner {
+  display: grid;
+  gap: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 3.5rem;
+}
+
+.page-head h1 {
+  margin: 0.25rem 0 0.75rem;
+  color: var(--on-dark);
+  font-size: clamp(2.6rem, 10vw, 5rem);
+  line-height: 0.95;
+}
+
+.page-head .lead { margin: 0; max-width: 38rem; color: var(--muted-on-dark); font-size: 1.15rem; }
+
+.page-head .crumbs { margin: 0; color: var(--muted-on-dark); }
+.page-head .crumbs a { color: var(--on-dark); }
+.page-head .crumbs span { color: var(--line-on-dark); }
+
+/* Title block reads as a light spec card on the dark band */
+.page-head .title-block { margin: 0; align-self: end; color: var(--text); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3); }
+
+.page-head .portrait { justify-self: start; }
+.page-head .portrait img { width: min(12rem, 55vw); border-color: var(--on-dark); }
+
+/* =====================================================================
+   Report-style sections: heading in a side column, content beside it
+   ===================================================================== */
+.doc { padding-bottom: 1rem; }
+.doc > .cover { margin-top: 2.5rem; }
+
+.doc-section {
+  padding: 2.25rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.doc > .doc-section:first-child { border-top: 0; }
+
+.doc-section > h2 {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.5rem;
+}
+
+.doc-body > :first-child { margin-top: 0; }
+.doc-body > :last-child { margin-bottom: 0; }
+.doc-body h3 { margin-top: 1.5rem; }
+.doc-body h3:first-child { margin-top: 0; }
+.doc-body .title-block { margin: 0; }
+.doc-body .gallery { margin-top: 1.75rem; }
+
+/* Timeline entries (education, experience, teams) */
+.entry {
+  position: relative;
+  padding: 0 0 1.5rem 1.4rem;
+  border-left: 2px solid var(--line);
+}
+
+.entry:last-child { padding-bottom: 0.25rem; }
+
+.entry::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.45rem;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.entry h3 { margin: 0; font-size: 1.15rem; }
+.entry-meta { margin: 0.1rem 0 0.35rem; color: var(--muted); font-family: var(--mono); font-size: 0.8125rem; }
+.entry p:last-child { margin-bottom: 0; }
+
+/* =====================================================================
+   Previous / next project links
+   ===================================================================== */
+.pager {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pager-link {
+  display: block;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.pager-link:hover { border-color: var(--accent); background: var(--tint); }
+.pager-next { text-align: right; }
+.pager-label { display: block; color: var(--accent); font-family: var(--mono); font-size: 0.8125rem; }
+.pager-title { display: block; margin-top: 0.2rem; font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; }
+
+/* Projects index: list sits right under the header band */
+.page-head + .wrap > .project-list { margin-top: 1.5rem; }
+
+@media (min-width: 40rem) {
+  .pager { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 60rem) {
+  .page-head-inner {
+    grid-template-columns: 1.25fr 1fr;
+    align-items: end;
+    gap: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .page-head-inner--single { grid-template-columns: 1fr; }
+  .page-head .portrait { justify-self: end; }
+  .page-head .portrait img { width: 15rem; }
+
+  .doc-section {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+  }
+
+  .doc-section > h2 {
+    position: sticky;
+    top: 5.5rem;
+    align-self: start;
+    margin: 0;
+    font-size: 1.35rem;
+  }
 }
