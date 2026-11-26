@@ -1,13 +1,17 @@
 /* Mobile first: base styles target phones; min-width queries add wider layouts.
    Look: engineering report meets drawing sheet, with large type and photo-led projects. */
 
+/* Colour: white and light blue, navy text, one stronger blue for links and buttons. */
 :root {
-  --bg: #f7f7f4;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --text: #16181b;
-  --muted: #53595f;
-  --rule: #c9ccc8;
-  --accent: #1747a6;
+  --sky: #eaf4fc;        /* light blue panels and footer */
+  --sky-strong: #cfe5f8; /* light blue borders and grid lines */
+  --text: #0f2740;       /* navy */
+  --muted: #4a6178;
+  --rule: #cddff0;
+  --line: #9cc3e6;       /* strong drawing lines */
+  --accent: #1769c2;
   --accent-ink: #ffffff;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
@@ -49,8 +53,8 @@ img { display: block; max-width: 100%; height: auto; }
   position: sticky;
   top: 0;
   z-index: 5;
-  background: var(--bg);
-  border-bottom: 2px solid var(--text);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--line);
 }
 
 .site-header .wrap {
@@ -90,13 +94,13 @@ img { display: block; max-width: 100%; height: auto; }
 .site-nav a[aria-current] { border-bottom: 2px solid var(--accent); }
 
 .site-footer {
-  margin-top: 4rem;
-  background: var(--text);
-  color: var(--bg);
+  margin-top: 5rem;
+  background: var(--sky);
+  border-top: 1px solid var(--line);
+  color: var(--text);
 }
 
-.site-footer .wrap { padding-top: 2.5rem; padding-bottom: 2rem; }
-.site-footer a { color: var(--bg); }
+.site-footer .wrap { padding-top: 3rem; padding-bottom: 2rem; }
 
 .footer-cta {
   margin: 0 0 1.25rem;
@@ -113,8 +117,8 @@ img { display: block; max-width: 100%; height: auto; }
   max-width: none;
   margin: 0;
   padding-top: 1rem;
-  border-top: 1px solid #3a3e43;
-  color: #a9adb1;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
   font-family: var(--mono);
   font-size: 0.8125rem;
 }
@@ -160,7 +164,7 @@ ul { padding-left: 1.25rem; }
   gap: 0.75rem;
   margin: 4rem 0 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--text);
+  border-bottom: 1px solid var(--line);
 }
 
 .section-head h2 {
@@ -191,48 +195,134 @@ ul { padding-left: 1.25rem; }
 
 .button {
   display: inline-block;
-  padding: 0.7rem 1.1rem;
-  border: 2px solid var(--text);
+  padding: 0.7rem 1.3rem;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
   background: transparent;
-  color: var(--text);
+  color: var(--accent);
   font-family: var(--mono);
   font-size: 0.875rem;
   text-decoration: none;
-  transition: background-color 0.15s, color 0.15s;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
 
-.button:hover { background: var(--text); color: var(--bg); }
+.button:hover { background: var(--sky); }
 
 .button-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-.button-primary:hover { background: var(--text); border-color: var(--text); }
+.button-primary:hover { background: var(--text); border-color: var(--text); color: var(--accent-ink); }
 
-.site-footer .button { border-color: var(--bg); color: var(--bg); }
-.site-footer .button:hover { background: var(--bg); color: var(--text); }
+.site-footer .button { background: var(--bg); }
+.site-footer .button:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 
-/* ---------- Home hero ---------- */
+/* ---------- Home hero: light blue drawing sheet with portrait ---------- */
 .hero {
   display: grid;
   gap: 2rem;
-  padding: 2.5rem 0 1rem;
+  margin-top: 1.5rem;
+  padding: 2rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background-color: var(--sky);
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(23, 105, 194, 0.07) 31px 32px),
+    repeating-linear-gradient(90deg, transparent 0 31px, rgba(23, 105, 194, 0.07) 31px 32px);
 }
 
 .hero h1 {
   margin: 0.5rem 0 1rem;
-  font-size: clamp(3rem, 15vw, 7.5rem);
+  font-size: clamp(3rem, 14vw, 6.5rem);
   line-height: 0.92;
   letter-spacing: -0.05em;
 }
 
 .hero .lead { max-width: 34rem; }
 
-.hero-figure { margin: 0; }
+.portrait { margin: 0; justify-self: center; text-align: center; }
 
-.hero-figure img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+.portrait img {
+  width: min(16rem, 70vw);
+  aspect-ratio: 1;
   object-fit: cover;
-  border: 2px solid var(--text);
+  border: 6px solid var(--bg);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(--line);
 }
+
+.portrait figcaption { margin-top: 0.75rem; }
+
+/* About me block on the home page: bio first, key facts beside it */
+.bio { display: grid; gap: 2rem; align-items: start; }
+.bio-text p { margin: 0 0 1.1rem; font-size: 1.08rem; line-height: 1.7; }
+.bio-text .bio-intro {
+  font-size: clamp(1.3rem, 3.6vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.fact-card {
+  padding: 1.25rem 1.25rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--sky);
+}
+
+.fact-card h3 {
+  margin: 0 0 0.4rem;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.facts { margin: 0 0 1.25rem; padding: 0; list-style: none; }
+.facts li { padding: 0.3rem 0; border-bottom: 1px solid var(--rule); font-weight: 600; }
+.facts li:last-child { border-bottom: 0; }
+.facts-line { margin: 0 0 1.25rem; font-size: 0.95rem; }
+.fact-card .title-block { margin: 0 0 1rem; font-size: 0.875rem; }
+.fact-card .title-block th { width: 40%; background: var(--bg); }
+
+/* ---------- Home project cards: small photos, three across ---------- */
+.project-cards {
+  display: grid;
+  gap: 1.25rem;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.project-card:hover { box-shadow: 0 8px 24px rgba(15, 39, 64, 0.1); transform: translateY(-2px); }
+
+.project-card .thumb,
+.project-card .sheet {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+}
+
+.project-card .body { display: flex; flex-direction: column; flex: 1; padding: 1rem 1.1rem 1.2rem; }
+.project-card h3 { margin: 0.35rem 0 0.4rem; font-size: 1.35rem; letter-spacing: -0.02em; }
+.project-card h3 a { color: var(--text); text-decoration: none; }
+.project-card h3 a::after { content: ""; position: absolute; inset: 0; } /* whole card clickable */
+.project-card { position: relative; }
+.project-card p { margin: 0 0 0.75rem; color: var(--muted); font-size: 0.95rem; }
+.project-card .more { margin: auto 0 0; color: var(--accent); font-family: var(--mono); font-size: 0.8125rem; }
 
 /* ---------- Missing facts stay visible ---------- */
 .todo {
@@ -251,7 +341,7 @@ ul { padding-left: 1.25rem; }
   margin: 1.5rem 0;
   border-collapse: collapse;
   background: var(--surface);
-  border: 2px solid var(--text);
+  border: 1px solid var(--line);
   font-size: 0.9375rem;
 }
 
@@ -331,7 +421,7 @@ ul { padding-left: 1.25rem; }
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border: 2px solid var(--text);
+  border: 1px solid var(--line);
   background-color: var(--surface);
 }
 
@@ -367,8 +457,8 @@ h1 + .lead + .project-list { margin-top: 2.5rem; }
   text-align: center;
   background-color: var(--surface);
   background-image:
-    repeating-linear-gradient(0deg, transparent 0 23px, #e6e8ec 23px 24px),
-    repeating-linear-gradient(90deg, transparent 0 23px, #e6e8ec 23px 24px);
+    repeating-linear-gradient(0deg, transparent 0 23px, var(--sky-strong) 23px 24px),
+    repeating-linear-gradient(90deg, transparent 0 23px, var(--sky-strong) 23px 24px);
 }
 
 /* ---------- Project pages ---------- */
@@ -377,19 +467,24 @@ h1 + .lead + .project-list { margin-top: 2.5rem; }
 
 .cover { margin: 1.5rem 0 0; }
 
-.cover .sheet { aspect-ratio: 16 / 9; border: 2px solid var(--text); }
+.cover .sheet { aspect-ratio: 16 / 9; border: 1px solid var(--line); }
 
 .cover img {
   width: 100%;
   max-height: 80vh;
   object-fit: cover;
-  border: 2px solid var(--text);
+  border: 1px solid var(--line);
 }
 
 /* ---------- Figures ---------- */
 figure { margin: 1.5rem 0; }
 
-figure img { border: 1px solid var(--rule); }
+figure img { border: 1px solid var(--rule); border-radius: 12px; }
+.sheet, .title-block { border-radius: 12px; }
+.title-block { border-collapse: separate; border-spacing: 0; overflow: hidden; }
+.title-block th, .title-block td { border-width: 0 0 1px; }
+.title-block tr:last-child th, .title-block tr:last-child td { border-bottom: 0; }
+.title-block th { background: var(--sky); }
 
 .gallery {
   display: grid;
@@ -453,19 +548,27 @@ html.lenis body { height: auto; }
   .title-block th { width: 14rem; }
   .numbered { grid-template-columns: repeat(2, 1fr); column-gap: 2rem; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
+  .project-cards { grid-template-columns: repeat(2, 1fr); }
+  .hero { padding: 3rem 2.5rem; }
 }
 
 @media (min-width: 60rem) {
   :root { --gutter: 2rem; }
 
   .hero {
-    grid-template-columns: 1.1fr 1fr;
-    align-items: end;
-    padding-top: 4rem;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    padding: 4rem 3.5rem;
   }
 
+  .portrait img { width: 18rem; }
+
+  .project-cards { grid-template-columns: repeat(3, 1fr); }
+
+  .bio { grid-template-columns: 1.6fr 1fr; column-gap: 3rem; }
+
   .project-row {
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     align-items: center;
     gap: 3rem;
     padding: 3rem 0;
@@ -478,3 +581,15 @@ html.lenis body { height: auto; }
 
   .numbered { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Smaller, left-aligned portrait on the About page */
+.about-portrait { text-align: left; margin-top: 1.5rem; }
+.about-portrait img { width: 10rem; }
+@media (min-width: 60rem) { .about-portrait img { width: 11rem; } }
+
+/* Key-facts card: stack label above value so the narrow table reads cleanly */
+.fact-card .title-block tr,
+.fact-card .title-block th,
+.fact-card .title-block td { display: block; width: auto; }
+.fact-card .title-block th { padding-bottom: 0; border-bottom: 0; }
+.fact-card .title-block td { padding-top: 0.15rem; }

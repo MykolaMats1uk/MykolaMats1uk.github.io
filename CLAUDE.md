@@ -52,12 +52,14 @@ Other projects come later.
 
 Engineering report meets drawing sheet: clean and technical, not generic.
 
-- Off-white background, near-black text, thin rules and one blueprint-blue accent.
+- Light blue and white: white background, light blue panels and footer (`--sky`), navy text, thin light-blue rules and one stronger blue (`--accent`) for links and buttons. All colours are tokens in `:root` in `css/style.css`.
+- Rounded corners (12–20px) and pill-shaped buttons; the home hero is a light blue drawing-sheet panel with a round portrait (`images/profile/`).
+- Home page project photos stay small (three cards with 16:9 thumbnails) so the projects don't dominate; the Projects page uses the larger alternating rows.
 - System sans-serif for text; system monospace for specs, dates and figure labels.
 - Project pages open with a "title block" table (status, dates, role, key specs), followed by numbered figures with captions.
 - Status is written out as "Finished" or "In progress", never shown by colour alone.
 - One column on phones, wider grids on larger screens.
-- Photo-led and bold, after the reference portfolios katieheinemann.space, davisryan.tech and ramitkrishnan.com: a large-name hero with a photo, numbered section heads ("01 Projects"), project rows that alternate photo and text sides with big titles and "View project" buttons, numbered interest lists, and a dark footer with a contact call to action.
+- Photo-led and bold, after the reference portfolios katieheinemann.space, davisryan.tech and ramitkrishnan.com: a large-name hero with a photo, numbered section heads ("01 Projects"), project rows on the Projects page that alternate photo and text sides with big titles and "View project" buttons, numbered interest lists, and a light blue footer with a contact call to action.
 - Project pages: heading and title block side by side on desktop, then a large cover photo, then sections with a two-column gallery of numbered figures.
 - Projects without photos show an empty drawing-sheet grid with a TODO, never a stock image.
 - Photos of events: blur or crop out bystanders and anything identifying, such as number plates, before adding them.

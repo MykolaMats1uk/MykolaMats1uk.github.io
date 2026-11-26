@@ -31,5 +31,20 @@ This file is public once pushed, so add only what you are happy to publish.
 Remove your home address and phone number first if you want those private.
 - PDF file name: I will add later
 
+## Certifications
+- Category B driving licence
+- Google AI Essentials
+
+## Awards and recognition (from LinkedIn headline)
+- All Ireland Scholar '25
+- Junior Academy of Sciences of Ukraine (Maths)
+
+## Languages (from LinkedIn)
+- Ukrainian: native or bilingual
+- Russian: native or bilingual
+- English: full professional proficiency
+- Polish: limited working proficiency
+- German: elementary proficiency
+
 ## Anything else
 -
