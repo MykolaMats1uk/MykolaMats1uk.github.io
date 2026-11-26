@@ -39,7 +39,22 @@
   });
 
   // Large photos open like a drawing being unrolled, from top to bottom.
-  gsap.utils.toArray('.hero-figure img, .cover img, .cover .sheet').forEach(function (el) {
+  // Portrait scales in gently.
+  gsap.from('.portrait img', { scale: 0.85, autoAlpha: 0, duration: 1, ease: 'power3.out', delay: 0.2 });
+
+  // Home project cards come in as a staggered group.
+  gsap.utils.toArray('.project-cards').forEach(function (list) {
+    gsap.from(list.children, {
+      y: 24,
+      autoAlpha: 0,
+      duration: 0.6,
+      ease: 'power3.out',
+      stagger: 0.1,
+      scrollTrigger: { trigger: list, start: 'top 85%', once: true }
+    });
+  });
+
+  gsap.utils.toArray('.cover img, .cover .sheet').forEach(function (el) {
     gsap.from(el, {
       clipPath: 'inset(0 0 100% 0)',
       duration: 1.1,

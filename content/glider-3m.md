@@ -26,7 +26,9 @@ This file is public once pushed, so add only what you are happy to publish.
 - long distance area investigation using fpv camera
 
 ## Design decisions (what, and why)
--
+- (from LinkedIn) Full design of the aircraft, simulation, testing and manufacturing
+- (from LinkedIn) Designed and optimised the airfoils of the wing surfaces and analysed their efficiency in different wind conditions
+- (from LinkedIn) Manufacturing includes additive manufacturing and composite production
 
 ## Build (mark planned items as planned)
 - Materials: Lw pla,Petg, carbon fiber composites, balsa
