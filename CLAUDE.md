@@ -54,7 +54,11 @@ Engineering report meets drawing sheet: clean and technical, not generic.
 
 - Warm palette sampled from the owner's portrait (`images/profile/mykola-matsiuk.jpg`): cream paper background (`--bg`, from the shirt), warm sand panels and footer (`--tint`), espresso text (`--text`), hair-brown secondary text (`--muted`), skin-tone lines (`--line`) and one copper accent (`--accent`, from the warm lights) for links and buttons. All colours are tokens in `:root` in `css/style.css`; keep every text colour at WCAG AA (the token comments list the ratios).
 - Theme browser surfaces from the palette too: text selection, caret, scrollbar and accent colour.
-- Rounded corners (12–20px) and pill-shaped buttons; the home hero is a warm drawing-sheet panel with a round portrait (`images/profile/`).
+- Rounded corners (12–20px) and pill-shaped buttons.
+- Dark photo bands, after the engineer portfolios on sitebuilderreport.com/inspiration/engineer-portfolios: the home hero (full width, name in cream over a darkened photo, round portrait), the home Projects band, and the footer on every page. Dark-band tokens are `--dark`, `--on-dark`, `--muted-on-dark`, `--line-on-dark` and `--accent-bright`; add the `on-dark` class for light-on-dark buttons.
+- Background pictures come only from the owner's own photos, turned into warm duotones in `images/backgrounds/` and darkened with a solid overlay (no gradients). Never stock images.
+- The home hero has an engineering drawing of a wing section (inline SVG, class `draw`). It is decoration only: never label it with a specific airfoil or numbers that could be read as a project spec.
+- Motion: one focal moment, the wing section drawing itself on the home page. Supporting motion is slow background parallax, scroll reveals and a photo zoom inside the frame on card hover (the card itself never moves).
 - Scroll animations must never hide content by default: elements are hidden only at the moment they scroll into view (see `reveal()` in `js/site.js`).
 - Home page project photos stay small (three cards with 16:9 thumbnails) so the projects don't dominate; the Projects page uses the larger alternating rows.
 - System sans-serif for text; system monospace for specs, dates and figure labels.
