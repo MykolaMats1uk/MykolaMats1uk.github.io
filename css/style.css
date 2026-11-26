@@ -16,6 +16,12 @@
   --line: #cdb09a;        /* stronger drawing lines, skin tone */
   --accent: #9a4a1f;      /* copper */
   --accent-ink: #fffaf4;
+  /* Dark photo bands (hero, projects, footer) */
+  --dark: #1f1815;          /* deepest espresso */
+  --on-dark: #f6ebdf;       /* cream text on dark, 14.9:1 */
+  --muted-on-dark: #d8c3b1; /* secondary text on dark, 10.3:1 */
+  --line-on-dark: #5a4a42;
+  --accent-bright: #e0905a; /* copper lit up for dark backgrounds, 7.0:1 */
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   --gutter: 1rem;
@@ -104,13 +110,24 @@ img { display: block; max-width: 100%; height: auto; }
 .site-nav a[aria-current] { border-bottom: 2px solid var(--accent); }
 
 .site-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   margin-top: 5rem;
-  background: var(--tint);
-  border-top: 1px solid var(--line);
-  color: var(--text);
+  background: var(--dark) url("../images/backgrounds/parts.jpg") center / cover no-repeat;
+  color: var(--on-dark);
 }
 
-.site-footer .wrap { padding-top: 3rem; padding-bottom: 2rem; }
+/* Solid warm overlay keeps the photo as texture and the text readable */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(31, 24, 21, 0.82);
+}
+
+.site-footer .wrap { padding-top: 4rem; padding-bottom: 2rem; }
 
 .footer-cta {
   margin: 0 0 1.25rem;
@@ -118,17 +135,17 @@ img { display: block; max-width: 100%; height: auto; }
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.03em;
-  max-width: none;
+  max-width: 18ch;
 }
 
-.site-footer .actions { margin: 0 0 2.5rem; }
+.site-footer .actions { margin: 0 0 3rem; }
 
 .footer-meta {
   max-width: none;
   margin: 0;
   padding-top: 1rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+  border-top: 1px solid var(--line-on-dark);
+  color: var(--muted-on-dark);
   font-family: var(--mono);
   font-size: 0.8125rem;
 }
@@ -221,31 +238,88 @@ ul { padding-left: 1.25rem; }
 .button-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .button-primary:hover { background: var(--text); border-color: var(--text); color: var(--accent-ink); }
 
-.site-footer .button { background: var(--bg); }
-.site-footer .button:hover { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+/* Buttons on dark photo bands */
+.on-dark .button,
+.site-footer .button { border-color: var(--on-dark); color: var(--on-dark); }
+.on-dark .button:hover,
+.site-footer .button:hover { background: var(--on-dark); color: var(--text); }
+.on-dark .button-primary { background: var(--accent-bright); border-color: var(--accent-bright); color: var(--dark); }
+.on-dark .button-primary:hover { background: var(--on-dark); border-color: var(--on-dark); color: var(--dark); }
 
-/* ---------- Home hero: light blue drawing sheet with portrait ---------- */
+/* ---------- Home hero: full-width photo band with a self-drawing wing section ---------- */
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: min(88vh, 52rem);
+  display: flex;
+  align-items: center;
+  background: var(--dark);
+  color: var(--on-dark);
+}
+
+/* Duotone photo of the 2 m glider; taller than the band so it can drift on scroll */
+.hero-bg {
+  position: absolute;
+  inset: -12% 0;
+  z-index: -2;
+  background: url("../images/backgrounds/hero-glider.jpg") center / cover no-repeat;
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 24, 21, 0.7);
+}
+
+/* Engineering drawing of a wing section, drawn in on load by js/site.js */
+.draw {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  bottom: -3rem;
+  width: min(72rem, 125%);
+  transform: translateX(-50%);
+  height: auto;
+  pointer-events: none;
+}
+
+.draw-line {
+  stroke: var(--accent-bright);
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.55;
+}
+
+.draw-main { stroke-width: 2.2; opacity: 0.8; }
+.draw-thin { stroke-width: 1; opacity: 0.45; }
+
+.draw-label {
+  fill: var(--muted-on-dark);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+}
+
+.hero-inner {
   display: grid;
-  gap: 2rem;
-  margin-top: 1.5rem;
-  padding: 2rem 1.25rem;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background-color: var(--tint);
-  background-image:
-    repeating-linear-gradient(0deg, transparent 0 31px, rgba(154, 74, 31, 0.07) 31px 32px),
-    repeating-linear-gradient(90deg, transparent 0 31px, rgba(154, 74, 31, 0.07) 31px 32px);
+  gap: 2.5rem;
+  padding-top: 4rem;
+  /* leave a strip along the bottom for the wing-section drawing */
+  padding-bottom: clamp(9rem, 24vw, 17rem);
 }
 
 .hero h1 {
-  margin: 0.5rem 0 1rem;
-  font-size: clamp(3rem, 14vw, 6.5rem);
+  margin: 0 0 1rem;
+  font-size: clamp(3rem, 14vw, 6rem);
   line-height: 0.92;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
+  color: var(--on-dark);
 }
 
-.hero .lead { max-width: 34rem; }
+.hero .lead { max-width: 34rem; color: var(--muted-on-dark); }
 
 .portrait { margin: 0; justify-self: center; text-align: center; }
 
@@ -258,7 +332,36 @@ ul { padding-left: 1.25rem; }
   box-shadow: 0 0 0 1px var(--line);
 }
 
-.portrait figcaption { margin-top: 0.75rem; }
+.hero .portrait img { border-color: var(--on-dark); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35); }
+
+/* ---------- Dark photo band (home page projects) ---------- */
+.band {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin-top: 5rem;
+  padding: 1rem 0 4.5rem;
+}
+
+.band-dark { background: var(--dark); color: var(--on-dark); }
+
+.band-bg {
+  position: absolute;
+  inset: -12% 0;
+  z-index: -1;
+  background: url("../images/backgrounds/wing-structure.jpg") center / cover no-repeat;
+}
+
+.band-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 24, 21, 0.84);
+}
+
+.band-dark .section-head { border-bottom-color: var(--line-on-dark); }
+.band-dark .section-head h2 { color: var(--on-dark); }
+.band-dark .section-head .num { color: var(--accent-bright); }
 
 /* About me block on the home page: bio first, key facts beside it */
 .bio { display: grid; gap: 2rem; align-items: start; }
@@ -314,7 +417,9 @@ ul { padding-left: 1.25rem; }
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.project-card:hover { box-shadow: 0 8px 24px rgba(53, 44, 41, 0.12); transform: translateY(-2px); }
+.project-card:hover { box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28); }
+.project-card .thumb { transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.project-card:hover .thumb { transform: scale(1.05); }
 
 .project-card .thumb,
 .project-card .sheet {
@@ -559,16 +664,15 @@ html.lenis body { height: auto; }
   .numbered { grid-template-columns: repeat(2, 1fr); column-gap: 2rem; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .project-cards { grid-template-columns: repeat(2, 1fr); }
-  .hero { padding: 3rem 2.5rem; }
 }
 
 @media (min-width: 60rem) {
   :root { --gutter: 2rem; }
 
-  .hero {
+  .hero-inner {
     grid-template-columns: 1.5fr 1fr;
     align-items: center;
-    padding: 4rem 3.5rem;
+    padding-top: 5rem;
   }
 
   .portrait img { width: 18rem; }
@@ -610,3 +714,9 @@ html.lenis body { height: auto; }
 .crumbs span { margin: 0 0.35rem; color: var(--line); }
 .project-head .crumbs { margin-top: 0; }
 .crumbs + h1 { margin-top: 0.25rem; }
+
+/* Reduced motion: photos stay still on hover (js/site.js already skips all scroll motion) */
+@media (prefers-reduced-motion: reduce) {
+  .project-card .thumb { transition: none; }
+  .project-card:hover .thumb { transform: none; }
+}

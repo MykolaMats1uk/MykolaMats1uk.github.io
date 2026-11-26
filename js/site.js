@@ -43,9 +43,35 @@
     });
   }
 
+  // Focal moment (home page): the wing section draws itself like a technical drawing,
+  // then the name and intro settle in over it. Lines are fully drawn by default, so
+  // nothing is missing if this script never runs.
+  var draw = document.querySelector('.hero .draw');
+  if (draw) {
+    var strokes = draw.querySelectorAll('.draw-main, circle.draw-line');
+    var details = draw.querySelectorAll('.draw-thin, .draw-label');
+    var tl = gsap.timeline({ defaults: { ease: 'power2.inOut' } });
+    strokes.forEach(function (el, i) {
+      var len = el.getTotalLength();
+      tl.fromTo(el, { strokeDasharray: len, strokeDashoffset: len },
+        { strokeDashoffset: 0, duration: i === 0 ? 1.8 : 0.7,
+          onComplete: function () { el.style.strokeDasharray = ''; } }, i === 0 ? 0 : 1.2);
+    });
+    tl.from(details, { autoAlpha: 0, duration: 0.8, stagger: 0.12, ease: 'power1.out' }, 0.9);
+  }
+
   // Intro: heading, lead and buttons slide in on load.
-  gsap.from('.hero > div > *, .project-head > div > *, main > h1, main > .lead', {
-    y: 24, autoAlpha: 0, duration: 0.8, ease: ease, stagger: 0.08
+  gsap.from('.hero-text > *, .project-head > div > *, main > h1, main > .lead', {
+    y: 24, autoAlpha: 0, duration: 0.8, ease: ease, stagger: 0.08, delay: draw ? 0.5 : 0
+  });
+
+  // Photo backgrounds drift slower than the page, so the bands feel layered.
+  gsap.utils.toArray('.hero-bg, .band-bg').forEach(function (bg) {
+    gsap.fromTo(bg, { yPercent: -6 }, {
+      yPercent: 6,
+      ease: 'none',
+      scrollTrigger: { trigger: bg.parentElement, start: 'top bottom', end: 'bottom top', scrub: true }
+    });
   });
 
   // Portrait scales in gently.
