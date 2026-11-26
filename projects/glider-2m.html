@@ -24,23 +24,26 @@
   </header>
 
   <main id="main" class="wrap">
-    <p class="label">Project</p>
-    <h1>2 m glider</h1>
-    <p class="lead"><span class="todo">TODO: one-line summary</span></p>
+    <div class="project-head">
+      <div>
+        <p class="label">Project 02 · RC aircraft</p>
+        <h1>2 m glider</h1>
+        <p class="lead"><span class="todo">TODO: one-line summary</span></p>
+      </div>
+      <table class="title-block">
+        <tbody>
+          <tr><th scope="row">Status</th><td><span class="status">Finished</span></td></tr>
+          <tr><th scope="row">Dates</th><td>June 2025 to August 2026</td></tr>
+          <tr><th scope="row">My role</th><td>Personal project; I did everything</td></tr>
+          <tr><th scope="row">Wingspan</th><td>2 m</td></tr>
+          <tr><th scope="row">Mass</th><td>1.2 kg <span class="todo">TODO: measured or designed?</span></td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    <table class="title-block">
-      <tbody>
-        <tr><th scope="row">Status</th><td><span class="status">Finished</span></td></tr>
-        <tr><th scope="row">Dates</th><td>June 2025 to August 2026</td></tr>
-        <tr><th scope="row">My role</th><td>Personal project; I did everything</td></tr>
-        <tr><th scope="row">Wingspan</th><td>2 m</td></tr>
-        <tr><th scope="row">Mass</th><td>1.2 kg <span class="todo">TODO: measured or designed?</span></td></tr>
-      </tbody>
-    </table>
-
-    <figure>
-      <div class="placeholder"><span class="todo">TODO: photo of the glider</span></div>
-      <figcaption>Fig. 1: <span class="todo">TODO: caption</span></figcaption>
+    <figure class="cover">
+      <img src="../images/glider-2m/glider-2m-finished.jpg" width="1072" height="530" alt="Finished 2 m glider with a blue and white wing, white fuselage and blue T-tail, resting on an office chair.">
+      <figcaption><b>Fig. 1</b> · The finished glider, assembled.</figcaption>
     </figure>
 
     <h2>Goal and constraints</h2>
@@ -53,6 +56,21 @@
       <li>T-tail</li>
     </ul>
     <p><span class="todo">TODO: why you made these decisions</span></p>
+
+    <div class="gallery">
+      <figure>
+        <img src="../images/glider-2m/glider-2m-wing-structure.jpg" width="964" height="1120" loading="lazy" alt="Inside one wing half before covering: foam ribs, a balsa spar along the trailing edge and a wooden servo mount.">
+        <figcaption><b>Fig. 2</b> · Inside a wing half before covering: foam ribs, balsa strips and a servo mount.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/glider-2m/glider-2m-parts.jpg" width="1100" height="770" loading="lazy" alt="Glider parts laid out on a bed: two wing halves, tailplane pieces, fin and rudder, and an orange and white fuselage.">
+        <figcaption><b>Fig. 3</b> · Parts before assembly: two wing halves, tail surfaces and the fuselage.</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/glider-2m/glider-2m-top.jpg" width="1068" height="750" loading="lazy" alt="The glider leaning against a wall after covering, with blue and white trim offcuts on the bed below.">
+        <figcaption><b>Fig. 4</b> · Covered and trimmed in blue and white, with the T-tail fitted.</figcaption>
+      </figure>
+    </div>
 
     <h2>Build</h2>
     <table class="title-block">
@@ -84,14 +102,17 @@
     <h2>What I would change</h2>
     <p><span class="todo">TODO</span></p>
 
-    <p><a href="index.html">All projects</a></p>
+    <p class="back"><a class="button" href="index.html">&larr; All projects</a></p>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>Mykola Matsiuk</p>
-      <p><a href="mailto:matsiukm@tcd.ie">matsiukm@tcd.ie</a></p>
-      <p><a href="https://www.linkedin.com/in/mykola-matsiuk-b7b0a23a3">LinkedIn</a></p>
+      <p class="footer-cta">Hiring a summer 2027 engineering intern?</p>
+      <ul class="actions">
+        <li><a class="button" href="mailto:matsiukm@tcd.ie">matsiukm@tcd.ie</a></li>
+        <li><a class="button" href="https://www.linkedin.com/in/mykola-matsiuk-b7b0a23a3">LinkedIn</a></li>
+      </ul>
+      <p class="footer-meta">Mykola Matsiuk · Engineering (TR032), Trinity College Dublin</p>
     </div>
   </footer>
   <script src="../js/vendor/gsap.min.js" defer></script>
