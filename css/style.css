@@ -1,18 +1,21 @@
 /* Mobile first: base styles target phones; min-width queries add wider layouts.
    Look: engineering report meets drawing sheet, with large type and photo-led projects. */
 
-/* Colour: white and light blue, navy text, one stronger blue for links and buttons. */
+/* Colour: warm tones sampled from the portrait (images/profile/mykola-matsiuk.jpg).
+   Cream paper from the shirt, espresso text from the dark background, sand and skin
+   tones for panels and lines, and one copper accent from the warm lights behind.
+   Contrast on --bg: text 12.7:1, muted 6.6:1, accent 5.8:1 (all WCAG AA). */
 :root {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --sky: #eaf4fc;        /* light blue panels and footer */
-  --sky-strong: #cfe5f8; /* light blue borders and grid lines */
-  --text: #0f2740;       /* navy */
-  --muted: #4a6178;
-  --rule: #cddff0;
-  --line: #9cc3e6;       /* strong drawing lines */
-  --accent: #1769c2;
-  --accent-ink: #ffffff;
+  --bg: #fbf6f0;          /* cream paper */
+  --surface: #fffaf4;     /* cards and tables */
+  --tint: #f3e6d8;        /* warm sand panels and footer */
+  --tint-strong: #e6d2bf; /* grid lines and selection */
+  --text: #352c29;        /* espresso */
+  --muted: #6a5446;       /* hair brown */
+  --rule: #e8d9ca;        /* thin dividers */
+  --line: #cdb09a;        /* stronger drawing lines, skin tone */
+  --accent: #9a4a1f;      /* copper */
+  --accent-ink: #fffaf4;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
   --gutter: 1rem;
@@ -20,7 +23,14 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  accent-color: var(--accent);
+  caret-color: var(--accent);
+  scrollbar-color: var(--line) var(--bg);
+}
+
+::selection { background: var(--tint-strong); color: var(--text); }
 
 body {
   margin: 0;
@@ -53,7 +63,7 @@ img { display: block; max-width: 100%; height: auto; }
   position: sticky;
   top: 0;
   z-index: 5;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(251, 246, 240, 0.94);
   border-bottom: 1px solid var(--line);
 }
 
@@ -95,7 +105,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 .site-footer {
   margin-top: 5rem;
-  background: var(--sky);
+  background: var(--tint);
   border-top: 1px solid var(--line);
   color: var(--text);
 }
@@ -206,7 +216,7 @@ ul { padding-left: 1.25rem; }
   transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
 
-.button:hover { background: var(--sky); }
+.button:hover { background: var(--tint); }
 
 .button-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .button-primary:hover { background: var(--text); border-color: var(--text); color: var(--accent-ink); }
@@ -222,10 +232,10 @@ ul { padding-left: 1.25rem; }
   padding: 2rem 1.25rem;
   border: 1px solid var(--line);
   border-radius: 20px;
-  background-color: var(--sky);
+  background-color: var(--tint);
   background-image:
-    repeating-linear-gradient(0deg, transparent 0 31px, rgba(23, 105, 194, 0.07) 31px 32px),
-    repeating-linear-gradient(90deg, transparent 0 31px, rgba(23, 105, 194, 0.07) 31px 32px);
+    repeating-linear-gradient(0deg, transparent 0 31px, rgba(154, 74, 31, 0.07) 31px 32px),
+    repeating-linear-gradient(90deg, transparent 0 31px, rgba(154, 74, 31, 0.07) 31px 32px);
 }
 
 .hero h1 {
@@ -264,7 +274,7 @@ ul { padding-left: 1.25rem; }
   padding: 1.25rem 1.25rem 0.5rem;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: var(--sky);
+  background: var(--tint);
 }
 
 .fact-card h3 {
@@ -304,7 +314,7 @@ ul { padding-left: 1.25rem; }
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
-.project-card:hover { box-shadow: 0 8px 24px rgba(15, 39, 64, 0.1); transform: translateY(-2px); }
+.project-card:hover { box-shadow: 0 8px 24px rgba(53, 44, 41, 0.12); transform: translateY(-2px); }
 
 .project-card .thumb,
 .project-card .sheet {
@@ -329,7 +339,7 @@ ul { padding-left: 1.25rem; }
   display: inline-block;
   padding: 0 0.4rem;
   border: 1px dashed #8a5300;
-  background: #fff3d6;
+  background: #fde3a7;
   color: #5c3700;
   font-family: var(--mono);
   font-size: 0.8125rem;
@@ -457,8 +467,8 @@ h1 + .lead + .project-list { margin-top: 2.5rem; }
   text-align: center;
   background-color: var(--surface);
   background-image:
-    repeating-linear-gradient(0deg, transparent 0 23px, var(--sky-strong) 23px 24px),
-    repeating-linear-gradient(90deg, transparent 0 23px, var(--sky-strong) 23px 24px);
+    repeating-linear-gradient(0deg, transparent 0 23px, var(--tint-strong) 23px 24px),
+    repeating-linear-gradient(90deg, transparent 0 23px, var(--tint-strong) 23px 24px);
 }
 
 /* ---------- Project pages ---------- */
@@ -484,7 +494,7 @@ figure img { border: 1px solid var(--rule); border-radius: 12px; }
 .title-block { border-collapse: separate; border-spacing: 0; overflow: hidden; }
 .title-block th, .title-block td { border-width: 0 0 1px; }
 .title-block tr:last-child th, .title-block tr:last-child td { border-bottom: 0; }
-.title-block th { background: var(--sky); }
+.title-block th { background: var(--tint); }
 
 .gallery {
   display: grid;
@@ -593,3 +603,10 @@ html.lenis body { height: auto; }
 .fact-card .title-block td { display: block; width: auto; }
 .fact-card .title-block th { padding-bottom: 0; border-bottom: 0; }
 .fact-card .title-block td { padding-top: 0.15rem; }
+
+/* Breadcrumb above project titles (replaces the old caps label) */
+.crumbs { margin: 2rem 0 0.5rem; color: var(--muted); font-size: 0.9375rem; }
+.crumbs a { font-weight: 600; }
+.crumbs span { margin: 0 0.35rem; color: var(--line); }
+.project-head .crumbs { margin-top: 0; }
+.crumbs + h1 { margin-top: 0.25rem; }
