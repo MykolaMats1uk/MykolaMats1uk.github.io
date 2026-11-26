@@ -4,7 +4,7 @@ Rough bullet points are fine. Give units for numbers, mark each as measured or d
 This file is public once pushed, so add only what you are happy to publish.
 
 ## Projects index
-- One-line summary:
+- One-line summary: A 2 m RC glider I built on my own, from a hand-made airfoil to a two-part balsa and foam wing. (Drafted by Claude from the facts below; edit freely.)
 - Thumbnail photo file name:
 - Display order (1, 2 or 3):
 
