@@ -8,7 +8,7 @@
   <link rel="icon" href="data:,">
   <link rel="preload" href="fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=9">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -42,7 +42,7 @@
         <h1>Mykola<br>Matsiuk</h1>
         <p class="lead">I design, build and test things by hand, from RC aircraft to wearables. Looking for an engineering internship in Ireland, summer 2027.</p>
         <ul class="actions">
-          <li><a class="button button-primary" href="projects/index.html">See my projects</a></li>
+          <li><a class="button button-primary" href="projects/index.html">See my projects <span class="arrow" aria-hidden="true">→</span></a></li>
           <li><a class="button" href="mailto:matsiukm@tcd.ie">Get in touch</a></li>
         </ul>
       </div>
@@ -51,6 +51,15 @@
       </figure>
       </div>
     </section>
+
+    <div class="wrap">
+      <dl class="spec-strip">
+        <div><dt>Studying</dt><dd>Mechanical Engineering, Trinity College Dublin</dd></div>
+        <div><dt>Year</dt><dd>Second of four</dd></div>
+        <div><dt>Building now</dt><dd><a href="projects/glider-3m.html">3 m RC FPV glider</a></dd></div>
+        <div><dt>Available</dt><dd>1 May to 15 September 2027</dd></div>
+      </dl>
+    </div>
 
     <div class="wrap">
     <div class="section-head"><span class="num">01</span><h2>About me</h2></div>
@@ -87,27 +96,43 @@
     </div>
     </div>
 
+    <section class="tools" aria-labelledby="tools-title">
+      <h2 id="tools-title" class="visually-hidden">Tools and methods I use</h2>
+      <ul class="tools-list">
+          <li>SolidWorks</li>
+          <li>Fusion 360</li>
+          <li>XFLR5</li>
+          <li>Python</li>
+          <li>Topology optimisation</li>
+          <li>3D printing</li>
+          <li>Laser cutting</li>
+          <li>Composites</li>
+          <li>Balsa and foam construction</li>
+          <li>Bambu Lab</li>
+      </ul>
+    </section>
+
     <section class="band band-dark">
       <div class="band-bg" aria-hidden="true"></div>
       <div class="wrap">
     <div class="section-head"><span class="num">02</span><h2>Projects</h2></div>
     <ul class="project-cards">
       <li class="project-card">
-        <img class="thumb" src="images/sentinel/sentinel-dashboard.jpg" width="1320" height="1200" loading="lazy" alt="Sentinel robot's screen showing a smiling face and live air-quality readings.">
+        <img class="thumb" src="images/sentinel/sentinel-screen-wide.jpg" width="1200" height="800" loading="lazy" alt="Sentinel robot's screen showing a smiling face and live air-quality readings.">
         <div class="body">
           <p class="project-meta">01 · Robotics · <span class="status">Finished</span></p>
           <h3><a href="projects/sentinel.html">Sentinel robot</a></h3>
           <p>A robot duo that monitors the MakerSpace. I did all the CAD and manufacturing.</p>
-          <p class="more">View project →</p>
+          <p class="more">View project <span class="arrow" aria-hidden="true">→</span></p>
         </div>
       </li>
       <li class="project-card">
-        <img class="thumb" src="images/glider-2m/glider-2m-finished.jpg" width="1072" height="530" loading="lazy" alt="Finished 2 m glider with a blue and white wing and a blue T-tail.">
+        <img class="thumb" src="images/glider-2m/glider-2m-top.jpg" width="1100" height="750" loading="lazy" alt="The 2 m glider leaning against a wall, showing its blue and white two-part wing and T-tail.">
         <div class="body">
           <p class="project-meta">02 · RC aircraft · <span class="status">Finished</span></p>
           <h3><a href="projects/glider-2m.html">2 m glider</a></h3>
           <p>A personal project with a 2 m wingspan, built from balsa, foam and plywood.</p>
-          <p class="more">View project →</p>
+          <p class="more">View project <span class="arrow" aria-hidden="true">→</span></p>
         </div>
       </li>
       <li class="project-card">
@@ -116,7 +141,7 @@
           <p class="project-meta">03 · RC aircraft · <span class="status">In progress</span></p>
           <h3><a href="projects/glider-3m.html">3 m glider</a></h3>
           <p>A 3 m wingspan glider for long-distance area investigation with an FPV camera.</p>
-          <p class="more">View project →</p>
+          <p class="more">View project <span class="arrow" aria-hidden="true">→</span></p>
         </div>
       </li>
     </ul>
@@ -151,6 +176,6 @@
   <script src="js/vendor/gsap.min.js" defer></script>
   <script src="js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="js/vendor/lenis.min.js" defer></script>
-  <script src="js/site.js" defer></script>
+  <script src="js/site.js?v=9" defer></script>
 </body>
 </html>
