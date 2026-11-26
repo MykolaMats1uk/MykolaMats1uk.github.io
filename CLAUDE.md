@@ -4,7 +4,7 @@ Personal engineering portfolio, hosted on GitHub Pages. The owner is a second-ye
 
 ## Rules
 
-- Plain HTML and CSS only. No frameworks and no build step.
+- Plain HTML and CSS only. No frameworks and no build step. The one exception is the self-hosted animation scripts below.
 - Mobile first: base styles target phones, and `min-width` media queries add wider layouts.
 - Images go in `/images`, resized to about 1600 px wide, with descriptive alt text.
 - Remove location and other metadata from images before adding them. Original photos stay outside the repo.
@@ -34,6 +34,8 @@ Other projects come later.
 │   ├── glider-2m.html
 │   └── glider-3m.html
 ├── css/style.css
+├── js/site.js
+├── js/vendor/{gsap,ScrollTrigger,lenis}.min.js
 ├── images/{profile,sentinel,glider-2m,glider-3m}/
 ├── content/{site,home,about,sentinel,glider-2m,glider-3m}.md
 ├── .nojekyll
@@ -43,7 +45,8 @@ Other projects come later.
 
 - Use relative links, so pages also work when opened locally.
 - The header and footer are repeated in every page. When changing one, update all pages.
-- No JavaScript is needed for version 1.
+- JavaScript is limited to motion: GSAP 3.15.1 + ScrollTrigger and Lenis 1.3.28, self-hosted in `js/vendor/` (never loaded from a CDN), driven by `js/site.js`. Every page loads them with `defer` before `</body>`.
+- Motion is progressive enhancement only: every page must stay fully readable with JavaScript off, and `js/site.js` does nothing when the visitor prefers reduced motion. Keep animations subtle (short fades and slides); no scroll-jacking or pinned sections.
 
 ## Visual direction
 
