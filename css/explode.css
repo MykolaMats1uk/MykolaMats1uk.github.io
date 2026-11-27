@@ -1,16 +1,18 @@
-/* Sentinel exploded view (projects/sentinel.html only).
-   Default state (no JavaScript, or prefers-reduced-motion): a static, fully exploded
-   drawing with every label visible. js/explode.js adds .is-live: the page keeps
-   scrolling normally (nothing is pinned) and the parts separate as the section moves
+/* Exploded views (projects/sentinel.html only): one component for any number of robots.
+   Default state (no JavaScript, or prefers-reduced-motion): static, fully exploded
+   drawings with every label visible. js/explode.js adds .is-live: the page keeps
+   scrolling normally (nothing is pinned) and the parts separate as each drawing moves
    into view, finishing when it reaches the middle of the window.
 
-   Sizing: --ch is the height of the drawing box. At full explosion the parts reach
-   from 0.63 x --ch above it to 0.52 x --ch below it, so the figure reserves that room.
-   js/explode.js measures the real window and sets --ch in pixels so it always fits. */
+   Each layer moves by --dx (fraction of the drawing's width) and --dy (fraction of its
+   height) at full explosion, so parts can go up, down, left or right.
+   Each canvas reserves room on every side for its parts: --mt, --mb (of height) and
+   --ml, --mr (of width). --ratio is the drawing box's width / height.
+   --ch is the drawing box height; js/explode.js sets it from the real window.
 
-.explode {
-  --e: 1;                 /* explosion amount, 0 = assembled, 1 = fully exploded */
-  --ch: min(24rem, 72vw * 793 / 647);
+   Layout: one robot after the other, labels beside each drawing on wide screens. */
+
+.explode-pair {
   margin-top: 3rem;
   border-top: 1px solid var(--rule);
   background: var(--bg);
@@ -27,6 +29,7 @@
 
 .explode-intro p { margin: 0; color: var(--muted); }
 .explode-hint { display: none; }
+.explode-pair.is-live .explode-hint { display: inline; }
 
 /* Skip link: hidden until focused by keyboard */
 .explode-skip {
@@ -45,21 +48,38 @@
   text-decoration: none;
 }
 
+.explode {
+  --e: 1;   /* explosion amount, 0 = assembled, 1 = fully exploded */
+}
+
 .explode-grid {
   display: grid;
-  gap: 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 2.5rem;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.explode-title {
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
 }
 
 /* The drawing: all layers share one box and stack in draw order */
-.explode-figure { margin: 0; }
+.explode-figure {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  min-width: 0;
+}
 
 .explode-canvas {
+  --ch: min(24rem, calc(86vw / (var(--ratio) * (1 + var(--ml) + var(--mr)))));
   position: relative;
+  flex: none;
   height: var(--ch);
-  aspect-ratio: 647 / 793;
-  margin: calc(var(--ch) * 0.63) auto calc(var(--ch) * 0.52);
+  aspect-ratio: var(--ratio);
+  margin: calc(var(--ch) * var(--mt)) calc(var(--ch) * var(--ratio) * var(--mr)) calc(var(--ch) * var(--mb)) calc(var(--ch) * var(--ratio) * var(--ml));
 }
 
 .explode-layer {
@@ -69,7 +89,7 @@
   height: 100%;
   border: 0;
   border-radius: 0;
-  transform: translate3d(0, calc(var(--shift, 0) * var(--e) * 100%), 0);
+  transform: translate3d(calc(var(--dx, 0) * var(--e) * 100%), calc(var(--dy, 0) * var(--e) * 100%), 0);
   pointer-events: none;
 }
 
@@ -114,12 +134,7 @@
   font-size: 0.95rem;
 }
 
-/* ---------- Live (scroll-driven) mode ---------- */
-.explode.is-live .explode-hint { display: inline; }
-
-/* Phones: drawing on top, list below; the newest part is highlighted */
-.explode.is-live .explode-grid { gap: 0.75rem; padding-top: 0.5rem; }
-
+/* ---------- Live (scroll-linked) mode, phones: list below the drawing ---------- */
 .explode.is-live .explode-part {
   opacity: 0.4;
   transition: opacity 0.3s ease;
@@ -136,13 +151,12 @@
     column-gap: 3rem;
   }
 
-  .explode { --ch: 26rem; }
+  .explode-title { grid-column: 1 / -1; }
+
+  .explode-canvas { --ch: min(26rem, calc(44vw / (var(--ratio) * (1 + var(--ml) + var(--mr))))); }
 
   /* Live: each label rides beside its own part (positioned by js/explode.js) */
-  .explode.is-live .explode-grid {
-    position: relative;
-    align-items: start;
-  }
+  .explode.is-live .explode-grid { position: relative; align-items: start; }
 
   .explode.is-live .explode-parts {
     position: relative;
@@ -162,8 +176,6 @@
     transition: opacity 0.35s ease;
   }
 
-  .explode.is-live .explode-part:last-child { border: 0; }
-
   /* Leader line from the label back towards its part */
   .explode.is-live .explode-part::before {
     content: "";
@@ -178,3 +190,8 @@
   .explode.is-live .explode-part.is-shown,
   .explode.is-live .explode-part.is-active { opacity: 1; }
 }
+
+/* Clear size steps between the section heading, robot titles, part names and body text */
+.explode-intro h2 { font-size: 2rem; letter-spacing: -0.03em; }
+.explode-title { font-size: 1.6rem; letter-spacing: -0.02em; }
+.explode-name { font-size: 1.25rem; letter-spacing: -0.01em; }

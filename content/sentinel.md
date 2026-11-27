@@ -67,8 +67,7 @@ This file is public once pushed, so add only what you are happy to publish.
 - sentinel-dashboard.jpg: Sentinel's screen close-up
 - sentinel-screen-wide.jpg: wide crop of the screen (home page card)
 - scout.jpg: Scout in hand, before the face screen was fitted
-- cad-sensor-robot-front.jpg, cad-sensor-robot-base.jpg, cad-sensor-robot-sections.jpg: SolidWorks renders of Scout
-- cad-dashboard-robot-front.jpg, cad-dashboard-robot-back.jpg, cad-screen-mount-detail.jpg: SolidWorks renders of Sentinel
+- SolidWorks renders: removed from the page (took too much space); the exploded views show the CAD instead
 - System plan sketch: kept private, not on the site
 
 ## Links to code, CAD or video (optional)
