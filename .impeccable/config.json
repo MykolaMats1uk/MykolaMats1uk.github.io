@@ -10,7 +10,7 @@
           "projects/index.html"
         ],
         "createdAt": "2026-11-26T14:51:10.809Z",
-        "reason": "Claude verified in browser: .project-row .project-title overrides the global h2 border-bottom and padding to 0, so no border touches the text"
+        "reason": "Checked in the browser: .project-row .project-title overrides the global h2 border-bottom and padding to 0, so no border touches the text"
       },
       {
         "rule": "cream-palette",
@@ -19,7 +19,7 @@
           "*.html"
         ],
         "createdAt": "2026-11-26T14:57:46.861Z",
-        "reason": "User asked for the warm colour scheme of their portrait; the #fbf6f0 background is sampled from the shirt in images/profile/mykola-matsiuk.jpg"
+        "reason": "I chose the warm colour scheme of my portrait; the #fbf6f0 background is sampled from the shirt in images/profile/mykola-matsiuk.jpg"
       },
       {
         "rule": "cream-palette",
@@ -28,7 +28,7 @@
           "projects/*.html"
         ],
         "createdAt": "2026-11-26T14:57:46.960Z",
-        "reason": "User asked for the warm colour scheme of their portrait; the #fbf6f0 background is sampled from the shirt in images/profile/mykola-matsiuk.jpg"
+        "reason": "I chose the warm colour scheme of my portrait; the #fbf6f0 background is sampled from the shirt in images/profile/mykola-matsiuk.jpg"
       }
     ]
   }
