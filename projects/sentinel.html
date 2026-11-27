@@ -9,6 +9,7 @@
   <link rel="preload" href="../fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=10">
+  <link rel="stylesheet" href="../css/explode.css?v=3">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -141,7 +142,61 @@
       </div>
     </section>
 
-    <section class="doc-section">
+    </div>
+
+    <section class="explode" id="exploded-view" aria-labelledby="explode-title">
+      <div class="wrap explode-intro">
+        <h2 id="explode-title">Exploded view</h2>
+        <p>Sentinel's SolidWorks model, taken apart into its main parts.<span class="explode-hint"> The parts separate as you scroll.</span></p>
+        <a class="explode-skip" href="#build">Skip the exploded view</a>
+      </div>
+      <div class="explode-track">
+        <div class="explode-stage">
+          <div class="wrap explode-grid">
+          <figure class="explode-figure">
+            <div class="explode-canvas">
+            <img class="explode-layer" src="../images/sentinel/explode/01-rpi.webp" width="647" height="793" loading="lazy" decoding="async" data-part="rpi" style="--shift: 0.3" alt="Raspberry Pi 4, shown as a simplified placeholder block, which sits inside Sentinel's body.">
+            <img class="explode-layer" src="../images/sentinel/explode/03-bottom.webp" width="647" height="793" loading="lazy" decoding="async" data-part="bottom" style="--shift: 0.55" alt="Bottom ring of Sentinel with its two feet.">
+            <img class="explode-layer" src="../images/sentinel/explode/02-body.webp" width="647" height="793" loading="lazy" decoding="async" data-part="body" style="--shift: 0" alt="Body shell of Sentinel: the rounded body with two arms and, on top, the rear housing for the screen with four screw bosses.">
+            <img class="explode-layer" src="../images/sentinel/explode/04-screen.webp" width="647" height="793" loading="lazy" decoding="async" data-part="screen" style="--shift: -0.32" alt="The 7-inch display panel with four mounting tabs.">
+            <img class="explode-layer" src="../images/sentinel/explode/05-cover.webp" width="647" height="793" loading="lazy" decoding="async" data-part="cover" style="--shift: -0.66" alt="Screen bezel: the rectangular frame that covers the edge of the display.">
+            </div>
+            <figcaption class="visually-hidden">Exploded view of Sentinel: from top to bottom, the screen bezel, the display panel, the body shell, the Raspberry Pi and the bottom ring with its feet.</figcaption>
+          </figure>
+          <ol class="explode-parts" aria-label="Sentinel parts, top to bottom">
+            <li class="explode-part" data-part="cover" data-anchor="0.344" data-reveal="0.05">
+              <span class="explode-num">05</span>
+              <h3 class="explode-name">Screen bezel</h3>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="screen" data-anchor="0.347" data-reveal="0.3">
+              <span class="explode-num">04</span>
+              <h3 class="explode-name">Display panel</h3>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="body" data-anchor="0.66" data-reveal="0.55">
+              <span class="explode-num">02</span>
+              <h3 class="explode-name">Body shell</h3>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="rpi" data-anchor="0.705" data-reveal="0.42">
+              <span class="explode-num">01</span>
+              <h3 class="explode-name">Raspberry Pi (simplified placeholder model)</h3>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="bottom" data-anchor="0.839" data-reveal="0.15">
+              <span class="explode-num">03</span>
+              <h3 class="explode-name">Bottom ring and feet</h3>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+          </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap doc">
+    <section class="doc-section" id="build">
       <h2>Build</h2>
       <div class="doc-body">
         <table class="title-block">
@@ -219,5 +274,6 @@
   <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="../js/vendor/lenis.min.js" defer></script>
   <script src="../js/site.js?v=10" defer></script>
+  <script src="../js/explode.js?v=3" defer></script>
 </body>
 </html>

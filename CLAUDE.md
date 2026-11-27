@@ -48,6 +48,8 @@ Other projects come later.
 - The header and footer are repeated in every page. When changing one, update all pages.
 - JavaScript is limited to motion: GSAP 3.15.1 + ScrollTrigger and Lenis 1.3.28, self-hosted in `js/vendor/` (never loaded from a CDN), driven by `js/site.js`. Every page loads them with `defer` before `</body>`.
 - Motion is progressive enhancement only: every page must stay fully readable with JavaScript off, and `js/site.js` does nothing when the visitor prefers reduced motion. Keep animations subtle (short fades and slides); no scroll-jacking or pinned sections.
+- The Sentinel exploded view (`#exploded-view` on `projects/sentinel.html`) is scroll-linked but not pinned: the page keeps scrolling normally and the parts separate as the drawing moves into view, finishing when it reaches the middle of the window. A pinned (sticky) version was tried and rejected by the owner because the page felt like it stopped. `js/explode.js` (vanilla JS, no libraries, loaded only on that page together with `css/explode.css`) reads scroll position, eases the motion each frame, and sizes the drawing from the real window so the fully exploded robot always fits. Without JavaScript or with reduced motion it is a static exploded drawing with all labels visible.
+- Exploded-view source files: raw SolidWorks PNGs go in `content/sentinel-explode/<robot>/` (ignored by git, only `parts.md` is tracked); the prepared layers are WebP files in `images/sentinel/explode/`, all cropped to one shared box and drawn back to front in the order measured against the assembled render.
 
 ## Visual direction
 
