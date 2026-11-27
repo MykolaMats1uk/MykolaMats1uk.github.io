@@ -1,0 +1,180 @@
+/* Sentinel exploded view (projects/sentinel.html only).
+   Default state (no JavaScript, or prefers-reduced-motion): a static, fully exploded
+   drawing with every label visible. js/explode.js adds .is-live: the page keeps
+   scrolling normally (nothing is pinned) and the parts separate as the section moves
+   into view, finishing when it reaches the middle of the window.
+
+   Sizing: --ch is the height of the drawing box. At full explosion the parts reach
+   from 0.63 x --ch above it to 0.52 x --ch below it, so the figure reserves that room.
+   js/explode.js measures the real window and sets --ch in pixels so it always fits. */
+
+.explode {
+  --e: 1;                 /* explosion amount, 0 = assembled, 1 = fully exploded */
+  --ch: min(24rem, 72vw * 793 / 647);
+  margin-top: 3rem;
+  border-top: 1px solid var(--rule);
+  background: var(--bg);
+}
+
+.explode-intro { padding-top: 2.5rem; }
+
+.explode-intro h2 {
+  margin: 0 0 0.75rem;
+  padding: 0;
+  border: 0;
+  font-size: 1.5rem;
+}
+
+.explode-intro p { margin: 0; color: var(--muted); }
+.explode-hint { display: none; }
+
+/* Skip link: hidden until focused by keyboard */
+.explode-skip {
+  position: absolute;
+  left: -999rem;
+}
+
+.explode-skip:focus {
+  position: static;
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.9rem;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.explode-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 2.5rem;
+}
+
+/* The drawing: all layers share one box and stack in draw order */
+.explode-figure { margin: 0; }
+
+.explode-canvas {
+  position: relative;
+  height: var(--ch);
+  aspect-ratio: 647 / 793;
+  margin: calc(var(--ch) * 0.63) auto calc(var(--ch) * 0.52);
+}
+
+.explode-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  transform: translate3d(0, calc(var(--shift, 0) * var(--e) * 100%), 0);
+  pointer-events: none;
+}
+
+.explode.is-live .explode-layer { will-change: transform; }
+
+/* Labels: an ordered list of real text, top to bottom */
+.explode-parts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: none;
+}
+
+.explode-part {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.explode-part:last-child { border-bottom: 1px solid var(--rule); }
+
+.explode-num {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.explode-name {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.explode-desc {
+  grid-column: 2;
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Live (scroll-driven) mode ---------- */
+.explode.is-live .explode-hint { display: inline; }
+
+/* Phones: drawing on top, list below; the newest part is highlighted */
+.explode.is-live .explode-grid { gap: 0.75rem; padding-top: 0.5rem; }
+
+.explode.is-live .explode-part {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.explode.is-live .explode-part.is-shown { opacity: 0.75; }
+.explode.is-live .explode-part.is-active { opacity: 1; }
+
+/* ---------- Wider screens: labels beside the drawing ---------- */
+@media (min-width: 60rem) {
+  .explode-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: center;
+    column-gap: 3rem;
+  }
+
+  .explode { --ch: 26rem; }
+
+  /* Live: each label rides beside its own part (positioned by js/explode.js) */
+  .explode.is-live .explode-grid {
+    position: relative;
+    align-items: start;
+  }
+
+  .explode.is-live .explode-parts {
+    position: relative;
+    align-self: stretch;
+  }
+
+  .explode.is-live .explode-part {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    max-width: 26rem;
+    padding: 0 0 0 3rem;
+    border: 0;
+    opacity: 0;
+    transform: translate3d(0, var(--y, 0px), 0);
+    transition: opacity 0.35s ease;
+  }
+
+  .explode.is-live .explode-part:last-child { border: 0; }
+
+  /* Leader line from the label back towards its part */
+  .explode.is-live .explode-part::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.75em;
+    width: 2.25rem;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .explode.is-live .explode-part.is-shown,
+  .explode.is-live .explode-part.is-active { opacity: 1; }
+}
