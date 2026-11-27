@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sentinel robot | Mykola Matsiuk</title>
-  <meta name="description" content="E3 Sentinel and Scout, a robot duo that monitors the MakerSpace. CAD and manufacturing by Mykola Matsiuk.">
+  <meta name="description" content="E3 Sentinel and Scout: a two-robot air-quality monitor for the E3 MakerSpace, built in two days. Mechanical design and manufacturing by Mykola Matsiuk.">
   <link rel="icon" href="data:,">
   <link rel="preload" href="../fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css?v=10">
+  <link rel="stylesheet" href="../css/style.css?v=11">
+  <link rel="stylesheet" href="../css/explode.css?v=9">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -32,15 +33,15 @@
         <div class="page-head-text">
           <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Projects</a> <span aria-hidden="true">/</span> 01 · Robotics</nav>
           <h1>Sentinel robot</h1>
-          <p class="lead">E3 Sentinel and Scout are a robot duo that monitors the MakerSpace, so nobody has to. I did all the CAD and manufacturing; teammates built the electronics and software.</p>
+          <p class="lead">E3 Sentinel and Scout: a two-robot system that monitors air quality and conditions in the E3 MakerSpace. A Trinity Robotics team project built in two days, for which I designed and manufactured every part.</p>
         </div>
         <table class="title-block">
           <tbody>
-          <tr><th scope="row">Status</th><td><span class="status">Finished</span></td></tr>
-          <tr><th scope="row">Version</th><td>V1, built in 2 days</td></tr>
-          <tr><th scope="row">Dates</th><td><span class="todo">TODO: start and end dates</span></td></tr>
-          <tr><th scope="row">My role</th><td>CAD and manufacturing: design, 3D printing, post-processing</td></tr>
-          <tr><th scope="row">Team</th><td>Electronics and software by other team members</td></tr>
+          <tr><th scope="row">Status</th><td><span class="status">Finished</span> (version 1 prototype)</td></tr>
+          <tr><th scope="row">Dates</th><td>November 2026, built in 2 days</td></tr>
+          <tr><th scope="row">Team</th><td>Trinity Robotics</td></tr>
+          <tr><th scope="row">My role</th><td>Mechanical design and manufacturing: all CAD, 3D printing and post-processing</td></tr>
+          <tr><th scope="row">Size</th><td>Sentinel 22 cm tall; Scout 15 cm tall</td></tr>
           </tbody>
         </table>
       </div>
@@ -48,7 +49,7 @@
 
     <div class="wrap doc">
     <figure class="cover">
-      <img src="../images/sentinel/sentinel-stand.jpg" width="1080" height="1000" alt="Sentinel, a white 3D-printed robot with a touchscreen, and Scout, a small round white robot, on a table at the Trinity Robotics stand.">
+      <img src="../images/sentinel/sentinel-stand.jpg" width="1080" height="1000" alt="Sentinel, a white 3D-printed robot with a 7-inch screen, and Scout, the small round robot, on a table at the Trinity Robotics stand.">
       <figcaption><b>Fig. 1</b> · Sentinel (right) and Scout (centre) on show at the Trinity Robotics stand.</figcaption>
     </figure>
 
@@ -57,81 +58,200 @@
       <div class="doc-body">
         <ul>
           <li>Detects smoke and solder fumes</li>
-          <li>Tracks humidity</li>
-          <li>Shows how things are with animated facial expressions</li>
-          <li>Buzzes when something is wrong</li>
+          <li>Tracks temperature and humidity</li>
+          <li>Reacts to conditions with animated facial expressions</li>
+          <li>Sounds a buzzer when something is wrong</li>
+          <li>Shows live readings, graphs and alerts on a 7-inch dashboard</li>
         </ul>
-        <p>This is version 1, built in two days. It is only getting better from here.</p>
       </div>
     </section>
 
     <section class="doc-section">
       <h2>Goal and constraints</h2>
       <div class="doc-body">
-        <p><span class="todo">TODO: goal and requirements</span></p>
+        <p>The E3 MakerSpace is full of equipment that affects the air and the room around it: soldering stations, a laser cutter and 3D printers. The aim was to monitor conditions in the space and help make sure it stays safe.</p>
+        <ul>
+          <li><b>Time.</b> The whole system had to be designed, printed and assembled in two days.</li>
+          <li><b>Material.</b> Filament had to be used economically, so parts were designed to need as little support material as possible.</li>
+        </ul>
       </div>
     </section>
 
     <section class="doc-section">
-      <h2>Design</h2>
+      <h2>How it works</h2>
       <div class="doc-body">
-        <h3>My part: mechanical</h3>
-        <p>I did all the CAD and manufacturing: designing the parts in SolidWorks, 3D printing them and post-processing them. <span class="todo">TODO: design decisions and why you made them</span></p>
-        <h3>Team: electronics and software</h3>
-        <p>Built by other team members, using an ESP32, a Raspberry Pi, sensors and displays.</p>
-        <div class="gallery">
-        <div class="gallery-row">
-          <figure style="--r: 1.1">
-            <img src="../images/sentinel/sentinel-dashboard.jpg" width="1320" height="1200" loading="lazy" alt="Close-up of Sentinel's screen: a smiling robot face marked OKAY next to TVOC, eCO2, temperature and humidity panels.">
-            <figcaption><b>Fig. 2</b> · Sentinel's screen: a face that reacts to conditions, beside live TVOC, eCO2, temperature and humidity panels.</figcaption>
-          </figure>
-          <figure style="--r: 0.855">
-            <img src="../images/sentinel/scout.jpg" width="1000" height="1170" loading="lazy" alt="Scout, a small white 3D-printed robot with a round head, a speaker grille and a dark base, held in one hand.">
-            <figcaption><b>Fig. 3</b> · Scout, the smaller robot of the duo, 3D printed in PLA.</figcaption>
-          </figure>
-        </div>
-        </div>
+        <p>The system has two parts. Scout, the small robot, measures the room and sends its readings over Wi-Fi to Sentinel, the larger robot, which displays them on its dashboard.</p>
+        <table class="title-block">
+          <tbody>
+          <tr><th scope="row">Scout: controller</th><td>ESP32-S3</td></tr>
+          <tr><th scope="row">Scout: sensors</th><td>DHT20 (temperature and humidity); air-quality sensor (CO<sub>2</sub>, TVOC, formaldehyde) <span class="todo">TODO: air-quality sensor model</span></td></tr>
+          <tr><th scope="row">Scout: display</th><td><a href="https://www.waveshare.com/1.28inch-touch-lcd.htm">1.28-inch round touch LCD</a> (face and touch input)</td></tr>
+          <tr><th scope="row">Scout: power</th><td>USB-C, 5 V</td></tr>
+          <tr><th scope="row">Link</th><td>Wi-Fi</td></tr>
+          <tr><th scope="row">Sentinel: computer</th><td><a href="https://pip-assets.raspberrypi.com/categories/545-raspberry-pi-4-model-b/documents/RP-008341-DS-1-raspberry-pi-4-datasheet.pdf">Raspberry Pi 4 Model B</a>, running the dashboard</td></tr>
+          <tr><th scope="row">Sentinel: display</th><td><a href="https://www.waveshare.com/wiki/7inch_HDMI_LCD_(C)">7-inch HDMI LCD (C)</a>: graphs and alerts</td></tr>
+          </tbody>
+        </table>
+        <p>The electronics and software were built by other team members.</p>
       </div>
     </section>
 
     <section class="doc-section">
+      <h2>My design</h2>
+      <div class="doc-body">
+        <p>I designed every part of both robots in SolidWorks.</p>
+        <ul>
+          <li><b>Scout.</b> Mounts and connection points for the electronics and the round face screen.</li>
+          <li><b>Sentinel.</b> Dedicated mounts for the 7-inch screen and a cover that encloses it.</li>
+          <li><b>Screen mounting.</b> Both screens are held securely with screws and printed mounts. In version 1 the remaining electronics sit loose inside the body.</li>
+          <li><b>Ventilation and sound.</b> Openings in the shell let room air reach the sensors, so readings reflect the space rather than the inside of the robot, and let the buzzer be heard.</li>
+          <li><b>Split bodies.</b> Each body is divided into three or four printed sections, which cuts down on support material and saves filament.</li>
+        </ul>
+      </div>
+    </section>
+
+    </div>
+
+    <div class="explode-pair" id="exploded-view">
+      <div class="wrap explode-intro">
+        <h2 id="explode-title">Exploded view</h2>
+        <p>The SolidWorks models of both robots, taken apart into their main parts.<span class="explode-hint"> The parts separate as you scroll.</span></p>
+        <a class="explode-skip" href="#build">Skip the exploded views</a>
+      </div>
+
+      <section class="explode" data-robot="sentinel" aria-labelledby="explode-sentinel">
+        <div class="wrap explode-grid">
+          <h3 class="explode-title" id="explode-sentinel">Sentinel</h3>
+          <figure class="explode-figure">
+            <div class="explode-canvas" style="--ratio: 0.8159; --mt: 0.66; --mb: 0.55; --ml: 0; --mr: 0">
+              <img class="explode-layer" src="../images/sentinel/explode/01-rpi.webp" width="647" height="793" loading="lazy" decoding="async" data-part="rpi" data-dir="down" style="--dx: 0.0; --dy: 0.3" alt="Raspberry Pi 4, shown as a simplified placeholder block, which sits inside Sentinel's body.">
+              <img class="explode-layer" src="../images/sentinel/explode/03-bottom.webp" width="647" height="793" loading="lazy" decoding="async" data-part="bottom" data-dir="down" style="--dx: 0.0; --dy: 0.55" alt="Bottom ring of Sentinel with its two feet.">
+              <img class="explode-layer" src="../images/sentinel/explode/02-body.webp" width="647" height="793" loading="lazy" decoding="async" data-part="body" data-dir="none" style="--dx: 0; --dy: 0" alt="Body shell of Sentinel: the rounded body with two arms and, on top, the rear housing for the screen with four screw bosses.">
+              <img class="explode-layer" src="../images/sentinel/explode/04-screen.webp" width="647" height="793" loading="lazy" decoding="async" data-part="screen" data-dir="up" style="--dx: 0.0; --dy: -0.32" alt="The 7-inch display panel with four mounting tabs.">
+              <img class="explode-layer" src="../images/sentinel/explode/05-cover.webp" width="647" height="793" loading="lazy" decoding="async" data-part="cover" data-dir="up" style="--dx: 0.0; --dy: -0.66" alt="Screen bezel: the rectangular frame that covers the edge of the display.">
+            </div>
+            <figcaption class="visually-hidden">Exploded view of Sentinel: from top to bottom, the screen bezel, the display panel, the body shell, the Raspberry Pi and the bottom ring with its feet.</figcaption>
+          </figure>
+          <ol class="explode-parts" aria-label="Sentinel parts, top to bottom">
+            <li class="explode-part" data-part="cover" data-anchor="0.344" data-reveal="0.05">
+              <span class="explode-num">05</span>
+              <h4 class="explode-name">Screen bezel</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="screen" data-anchor="0.347" data-reveal="0.3">
+              <span class="explode-num">04</span>
+              <h4 class="explode-name">Display panel</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="body" data-anchor="0.66" data-reveal="0.55">
+              <span class="explode-num">02</span>
+              <h4 class="explode-name">Body shell</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="rpi" data-anchor="0.705" data-reveal="0.42">
+              <span class="explode-num">01</span>
+              <h4 class="explode-name">Raspberry Pi (simplified placeholder model)</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="bottom" data-anchor="0.839" data-reveal="0.15">
+              <span class="explode-num">03</span>
+              <h4 class="explode-name">Bottom ring and feet</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="explode" data-robot="scout" aria-labelledby="explode-scout">
+        <div class="wrap explode-grid">
+          <h3 class="explode-title" id="explode-scout">Scout: the small robot</h3>
+          <figure class="explode-figure">
+            <div class="explode-canvas" style="--ratio: 0.7335; --mt: 0.3; --mb: 0.3; --ml: 0.45; --mr: 0.45">
+              <img class="explode-layer" src="../images/sentinel/explode-small/01-bottom.webp" width="567" height="773" loading="lazy" decoding="async" data-part="bottom" data-dir="down" style="--dx: 0.0; --dy: 0.3" alt="Bottom of Scout: a shallow round base with a notch in its rim.">
+              <img class="explode-layer" src="../images/sentinel/explode-small/03-ring.webp" width="567" height="773" loading="lazy" decoding="async" data-part="ring" data-dir="up" style="--dx: 0.0; --dy: -0.3" alt="A small ring that sits hidden inside Scout's head when assembled.">
+              <img class="explode-layer" src="../images/sentinel/explode-small/04-back.webp" width="567" height="773" loading="lazy" decoding="async" data-part="back" data-dir="right" style="--dx: 0.45; --dy: 0.0" alt="Back shell of Scout: the rear half of the head and body, seen from the inside.">
+              <img class="explode-layer" src="../images/sentinel/explode-small/02-front.webp" width="567" height="773" loading="lazy" decoding="async" data-part="front" data-dir="left" style="--dx: -0.45; --dy: 0.0" alt="Front shell of Scout: the front half of the round head with the face opening, the body with the speaker grille, and the arms.">
+            </div>
+            <figcaption class="visually-hidden">Exploded view of Scout: the ring rises out of the head, the front and back shells split apart to the sides, and the bottom drops away.</figcaption>
+          </figure>
+          <ol class="explode-parts" aria-label="Scout parts, top to bottom">
+            <li class="explode-part" data-part="ring" data-anchor="0.074" data-reveal="0.1">
+              <span class="explode-num">03</span>
+              <h4 class="explode-name">Ring</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="front" data-anchor="0.4" data-reveal="0.25">
+              <span class="explode-num">02</span>
+              <h4 class="explode-name">Front shell</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="back" data-anchor="0.62" data-reveal="0.4">
+              <span class="explode-num">04</span>
+              <h4 class="explode-name">Back shell</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="bottom" data-anchor="0.873" data-reveal="0.55">
+              <span class="explode-num">01</span>
+              <h4 class="explode-name">Bottom</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </div>
+
+    <div class="wrap doc">
+    <section class="doc-section" id="build">
       <h2>Build</h2>
       <div class="doc-body">
         <table class="title-block">
           <tbody>
-          <tr><th scope="row">Material</th><td>PLA</td></tr>
-          <tr><th scope="row">Process</th><td>3D printing and post-processing</td></tr>
+          <tr><th scope="row">Printer</th><td>Bambu Lab A1</td></tr>
+          <tr><th scope="row">Material</th><td>White and black PLA</td></tr>
+          <tr><th scope="row">Scout</th><td>Printed on four printers in parallel to meet the deadline; about 5 hours of printing on a single printer</td></tr>
+          <tr><th scope="row">Sentinel</th><td>Three printed parts; about 15 hours of printing in total</td></tr>
+          <tr><th scope="row">Post-processing</th><td>Sanding for fit</td></tr>
           <tr><th scope="row">Software</th><td>SolidWorks, Bambu Lab slicer</td></tr>
           </tbody>
         </table>
+        <div class="gallery">
+        <div class="gallery-row">
+          <figure style="--r: 1.1">
+            <img src="../images/sentinel/sentinel-dashboard.jpg" width="1320" height="1200" loading="lazy" alt="Close-up of Sentinel's 7-inch screen: a smiling face marked OKAY next to TVOC, eCO2, temperature and humidity panels.">
+            <figcaption><b>Fig. 2</b> · Sentinel's dashboard: a reactive face beside live TVOC, eCO2, temperature and humidity readings.</figcaption>
+          </figure>
+          <figure style="--r: 0.855">
+            <img src="../images/sentinel/scout.jpg" width="1000" height="1170" loading="lazy" alt="Scout, 3D printed in white PLA with a black base, held in one hand before its face screen was fitted.">
+            <figcaption><b>Fig. 3</b> · Scout printed in white and black PLA, before its round face screen was fitted.</figcaption>
+          </figure>
+        </div>
+        </div>
       </div>
     </section>
 
     <section class="doc-section">
-      <h2>Specs</h2>
+      <h2>Results</h2>
       <div class="doc-body">
-        <p><span class="todo">TODO: specs with units</span></p>
-      </div>
-    </section>
-
-    <section class="doc-section">
-      <h2>Testing and results</h2>
-      <div class="doc-body">
-        <p><span class="todo">TODO</span></p>
+        <p>The version 1 prototype works and tracks all of its data correctly. At the Trinity Robotics stand, visitors guessed it had taken anywhere from two weeks to five years to build; it took two days.</p>
       </div>
     </section>
 
     <section class="doc-section">
       <h2>Problems and how I solved them</h2>
       <div class="doc-body">
-        <p><span class="todo">TODO</span></p>
+        <h3>Fit and tolerances</h3>
+        <p>The small electronic components needed tighter tolerances than the Bambu Lab A1 could reliably print. Some components did not fit their mounts, and the joints between body sections were too tight. I sanded the affected parts by hand until everything assembled correctly.</p>
       </div>
     </section>
 
     <section class="doc-section">
-      <h2>What I'd do differently</h2>
+      <h2>Plans for version 2</h2>
       <div class="doc-body">
-        <p><span class="todo">TODO</span></p>
+        <ul>
+          <li>Count the number of people in the MakerSpace.</li>
+          <li>Mount Sentinel on the wall.</li>
+          <li>Improve ventilation in Scout so nothing inside affects its readings.</li>
+        </ul>
       </div>
     </section>
     </div>
@@ -158,6 +278,7 @@
   <script src="../js/vendor/gsap.min.js" defer></script>
   <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="../js/vendor/lenis.min.js" defer></script>
-  <script src="../js/site.js?v=10" defer></script>
+  <script src="../js/site.js?v=11" defer></script>
+  <script src="../js/explode.js?v=5" defer></script>
 </body>
 </html>
