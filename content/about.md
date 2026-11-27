@@ -20,8 +20,8 @@ This file is public once pushed, so add only what you are happy to publish.
 - Other:
 
 ## Work experience (role, employer, dates, what you did)
-- 2 yrs in constructions with "retrofit limited"
-- 1 year shop assistant in "Krakowiak"
+- Construction labourer, Retrofit Limited, 2 years: painting, fixing roofs, renovating properties; built fences; made concrete for a shed foundation and fences; used all kinds of power tools.
+- Shop assistant, Krakowiak, 1 year: helped customers, worked at the till, analysed which items were running out of stock and needed to be ordered.
 
 ## Societies and teams (name, role, dates)
 - Robotics team - builder, started November 2026
