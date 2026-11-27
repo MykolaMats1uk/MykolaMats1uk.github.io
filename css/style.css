@@ -1137,3 +1137,15 @@ p { text-wrap: pretty; }
   object-fit: initial;
 }
 .cover figcaption { text-align: center; }
+
+/* --- Gallery rows: two photos per row, scaled to the same height ---
+   Each figure carries its aspect ratio in --r (width / height). Giving each figure a
+   flex-grow equal to its ratio makes both photos exactly the same height, so there is
+   no blank space under the shorter one. Phones show one photo per row. */
+.gallery-row { display: grid; gap: 1.5rem; }
+
+@media (min-width: 40rem) {
+  .gallery { grid-template-columns: 1fr; }
+  .gallery-row { display: flex; align-items: flex-start; gap: 1.25rem; }
+  .gallery-row figure { flex: var(--r, 1) 1 0; min-width: 0; }
+}
