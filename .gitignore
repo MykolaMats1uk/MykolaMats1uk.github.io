@@ -1,0 +1,6 @@
+
+# Raw CAD exports for the exploded view stay out of the public repo (only parts.md is tracked)
+content/sentinel-explode/**/*.png
+
+# Playwright test output (screenshots, logs)
+.playwright-mcp/
