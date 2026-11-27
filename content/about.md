@@ -35,7 +35,8 @@ Remove your home address and phone number first if you want those private.
 - Category B driving licence
 - Google AI Essentials
 
-## Awards and recognition (from LinkedIn headline)
+## Awards and recognition
+- Entrance Exhibition Award 2025/26, Trinity College Dublin: highest Leaving Certificate points among Trinity entrants from my school (https://www.tcd.ie/provost/news/news-articles/entrance-exhibition-awards-202526/)
 - All Ireland Scholar '25
 - Junior Academy of Sciences of Ukraine (Maths)
 
