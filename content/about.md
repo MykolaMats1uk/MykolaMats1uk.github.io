@@ -36,7 +36,7 @@ Remove your home address and phone number first if you want those private.
 - Google AI Essentials
 
 ## Awards and recognition
-- Entrance Exhibition Award 2025/26
+- Trinity Entrance Exhibition Award 2025/26
 - All Ireland Scholar '25
 - Junior Academy of Sciences of Ukraine (Maths)
 
