@@ -346,7 +346,7 @@ ul { padding-left: 1.25rem; }
 .portrait { margin: 0; justify-self: center; text-align: center; }
 
 .portrait img {
-  width: min(16rem, 70vw);
+  width: min(18rem, 75vw);
   aspect-ratio: 1;
   object-fit: cover;
   border: 6px solid var(--bg);
@@ -695,7 +695,7 @@ html.lenis body { height: auto; }
     padding-top: 5rem;
   }
 
-  .portrait img { width: 18rem; }
+  .portrait img { width: 22rem; }
 
   .project-cards { grid-template-columns: repeat(3, 1fr); }
 
