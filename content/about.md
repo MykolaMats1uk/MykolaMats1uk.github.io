@@ -25,7 +25,7 @@ This file is public once pushed, so add only what you are happy to publish.
 - Shop assistant, Krakowiak, 1 year: helped customers, worked at the till, analysed which items were running out of stock and needed to be ordered.
 
 ## Societies and teams (name, role, dates)
-- Robotics team - builder, started November 2026
+- Trinity Robotics (https://trinityrobotics.dev/) - builder, started November 2026
 
 ## CV (optional)
 Remove your home address and phone number first if you want those private.
