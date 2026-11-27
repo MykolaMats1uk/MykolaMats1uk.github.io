@@ -8,7 +8,8 @@ This file is public once pushed, so add only what you are happy to publish.
 - Course:
 - Start date: 2025
 - Expected graduation: 2029
-- Earlier education (optional): Dundalk Delasalle Collage
+- Earlier education: De La Salle College, Dundalk, 2022 – 2025
+- Before that: School No. 8, Rivne, Ukraine, from 2015 (until moving to De La Salle in 2022)
 
 ## Modules and grades (include grades only if you want them shown)
 -
