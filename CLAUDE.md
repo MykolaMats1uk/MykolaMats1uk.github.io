@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Personal engineering portfolio, hosted on GitHub Pages. The owner is a second-year mechanical engineering student applying for summer 2027 internships in Ireland.
+My personal engineering portfolio, hosted on GitHub Pages. I'm a second-year mechanical engineering student applying for summer 2027 internships in Ireland.
 
 ## Rules
 
@@ -46,22 +46,22 @@ Other projects come later.
 
 - Use relative links, so pages also work when opened locally.
 - The header and footer are repeated in every page. When changing one, update all pages.
-- The site header is solid and hides while scrolling down, returning as soon as the visitor scrolls up, reaches the top or tabs into it (top of `js/site.js`, also with reduced motion but without the slide). The owner asked for this so the header never covers content.
+- The site header is solid and hides while scrolling down, returning as soon as the visitor scrolls up, reaches the top or tabs into it (top of `js/site.js`, also with reduced motion but without the slide). I want the header never to cover content.
 - JavaScript is limited to motion: GSAP 3.15.1 + ScrollTrigger and Lenis 1.3.28, self-hosted in `js/vendor/` (never loaded from a CDN), driven by `js/site.js`. Every page loads them with `defer` before `</body>`.
 - Motion is progressive enhancement only: every page must stay fully readable with JavaScript off, and `js/site.js` does nothing when the visitor prefers reduced motion. Keep animations subtle (short fades and slides); no scroll-jacking or pinned sections.
-- Exploded views (`#exploded-view` on `projects/sentinel.html`): one component for any number of robots (currently Sentinel and Scout). Each layer moves by `--dx` / `--dy` (fractions of the drawing's width / height), so parts can go up, down, left or right; each canvas reserves room with `--mt`, `--mb`, `--ml`, `--mr` and has `--ratio`. The robots are stacked, one after the other; a side-by-side layout was tried and the owner preferred stacked.
-- The exploded views are scroll-linked but not pinned: the page keeps scrolling normally and the parts separate as the drawing moves into view, finishing when it reaches the middle of the window. A pinned (sticky) version was tried and rejected by the owner because the page felt like it stopped. `js/explode.js` (vanilla JS, no libraries, loaded only on that page together with `css/explode.css`) reads scroll position, eases the motion each frame, and sizes the drawing from the real window so the fully exploded robot always fits. Without JavaScript or with reduced motion it is a static exploded drawing with all labels visible.
+- Exploded views (`#exploded-view` on `projects/sentinel.html`): one component for any number of robots (currently Sentinel and Scout). Each layer moves by `--dx` / `--dy` (fractions of the drawing's width / height), so parts can go up, down, left or right; each canvas reserves room with `--mt`, `--mb`, `--ml`, `--mr` and has `--ratio`. The robots are stacked, one after the other; I tried a side-by-side layout and prefer stacked.
+- The exploded views are scroll-linked but not pinned: the page keeps scrolling normally and the parts separate as the drawing moves into view, finishing when it reaches the middle of the window. I tried a pinned (sticky) version and rejected it because the page felt like it stopped. `js/explode.js` (vanilla JS, no libraries, loaded only on that page together with `css/explode.css`) reads scroll position, eases the motion each frame, and sizes the drawing from the real window so the fully exploded robot always fits. Without JavaScript or with reduced motion it is a static exploded drawing with all labels visible.
 - Exploded-view source files: raw SolidWorks PNGs go in `content/sentinel-explode/<robot>/` (ignored by git, only `parts.md` is tracked); the prepared layers are WebP files in `images/sentinel/explode/` (Sentinel) and `images/sentinel/explode-small/` (Scout), all cropped to one shared box and drawn back to front in the order measured against the assembled render.
 
 ## Visual direction
 
 Engineering report meets drawing sheet: clean and technical, not generic.
 
-- Warm palette sampled from the owner's portrait (`images/profile/mykola-matsiuk.jpg`): cream paper background (`--bg`, from the shirt), warm sand panels and footer (`--tint`), espresso text (`--text`), hair-brown secondary text (`--muted`), skin-tone lines (`--line`) and one copper accent (`--accent`, from the warm lights) for links and buttons. All colours are tokens in `:root` in `css/style.css`; keep every text colour at WCAG AA (the token comments list the ratios).
+- Warm palette sampled from my portrait (`images/profile/mykola-matsiuk.jpg`): cream paper background (`--bg`, from the shirt), warm sand panels and footer (`--tint`), espresso text (`--text`), hair-brown secondary text (`--muted`), skin-tone lines (`--line`) and one copper accent (`--accent`, from the warm lights) for links and buttons. All colours are tokens in `:root` in `css/style.css`; keep every text colour at WCAG AA (the token comments list the ratios).
 - Theme browser surfaces from the palette too: text selection, caret, scrollbar and accent colour.
 - Rounded corners (12–20px) and pill-shaped buttons.
 - Dark photo bands, after the engineer portfolios on sitebuilderreport.com/inspiration/engineer-portfolios: the home hero (full width, name in cream over a darkened photo, round portrait), the home Projects band, and the footer on every page. Dark-band tokens are `--dark`, `--on-dark`, `--muted-on-dark`, `--line-on-dark` and `--accent-bright`; add the `on-dark` class for light-on-dark buttons.
-- Background pictures come only from the owner's own photos, turned into warm duotones in `images/backgrounds/` and darkened with a solid overlay (no gradients). Never stock images.
+- Background pictures come only from my own photos, turned into warm duotones in `images/backgrounds/` and darkened with a solid overlay (no gradients). Never stock images.
 - The home hero has an engineering drawing of a wing section (inline SVG, class `draw`). It is decoration only: never label it with a specific airfoil or numbers that could be read as a project spec.
 - Motion: one focal moment on the home page, the wing section drawing itself while the name rises letter by letter. Every page shares the same motion language:
   - Page titles (`.hero h1`, `.page-head h1`) rise letter by letter; section headings and the footer call to action rise word by word out of a mask (`splitText()` in `js/site.js`; the plain text stays in `aria-label`; headings containing links are left alone).
@@ -72,7 +72,7 @@ Engineering report meets drawing sheet: clean and technical, not generic.
 - Design references for motion and components: motion.dev, animejs.com, kokonutui.com and 21st.dev, used for ideas only. Build every effect with the existing GSAP/CSS; do not add their libraries.
 - Home page components: a ruled spec strip of labelled cells under the hero (`.spec-strip`) and a static tools strip (`.tools-list`). No auto-scrolling tickers or marquees.
 - When CSS or JS changes, bump the `?v=` number on the `style.css` and `site.js` links in every page so browsers fetch the new files.
-- The owner tried a bold chocolate/copper theme with square corners and rejected it: keep this warm, softer design.
+- I tried a bold chocolate/copper theme with square corners and rejected it: keep this warm, softer design.
 - Scroll animations must never hide content by default: elements are hidden only at the moment they scroll into view (see `reveal()` in `js/site.js`).
 - Home page project photos stay small (three cards with 16:9 thumbnails) so the projects don't dominate; the Projects page uses the larger alternating rows.
 - Type: Archivo (`--display`) for headings, IBM Plex Sans (`--sans`) for body text, navigation and buttons, IBM Plex Mono (`--mono`) only for data: specs, dates, table labels, figure labels and meta lines. Never use monospace as decoration.
