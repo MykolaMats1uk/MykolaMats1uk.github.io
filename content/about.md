@@ -38,7 +38,7 @@ Remove your home address and phone number first if you want those private.
 ## Awards and recognition
 - Trinity Entrance Exhibition Award 2025/26
 - All Ireland Scholar '25
-- Junior Academy of Sciences of Ukraine (Maths)
+- Junior Academy of Sciences of Ukraine (Maths), 2021
 
 ## Languages (from LinkedIn)
 - Ukrainian: native or bilingual

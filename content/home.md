@@ -16,7 +16,7 @@ Source: my LinkedIn About section and headline (26 November 2026).
 ## Highlights
 - Trinity Entrance Exhibition Award 2025/26
 - All Ireland Scholar '25
-- Junior Academy of Sciences of Ukraine (Maths)
+- Junior Academy of Sciences of Ukraine (Maths), 2021
 - CAD, 3D printing, RC aircraft builds, manufacturing
 
 ## Study
