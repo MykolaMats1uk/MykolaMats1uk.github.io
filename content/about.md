@@ -15,8 +15,7 @@ This file is public once pushed, so add only what you are happy to publish.
 
 ## Skills
 - CAD and simulation:
-- Programming:
-- Electronics:
+- Programming: Python, C++, MATLAB
 - Workshop and manufacturing:
 - Other:
 
