@@ -4,3 +4,6 @@ content/sentinel-explode/**/*.png
 
 # Playwright test output (screenshots, logs)
 .playwright-mcp/
+
+# Design checker cache
+.impeccable/hook.cache.json
