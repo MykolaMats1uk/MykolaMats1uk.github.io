@@ -300,7 +300,7 @@ ul { padding-left: 1.25rem; }
   position: absolute;
   z-index: -1;
   left: 50%;
-  bottom: -3rem;
+  bottom: 0.75rem;
   width: min(72rem, 125%);
   transform: translateX(-50%);
   height: auto;
@@ -330,7 +330,7 @@ ul { padding-left: 1.25rem; }
   gap: 2.5rem;
   padding-top: 4rem;
   /* leave a strip along the bottom for the wing-section drawing */
-  padding-bottom: clamp(9rem, 24vw, 17rem);
+  padding-bottom: clamp(12rem, 28vw, 20rem);
 }
 
 .hero h1 {
