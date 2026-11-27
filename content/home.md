@@ -13,7 +13,8 @@ Source: my LinkedIn About section and headline (26 November 2026).
 - Interested in lightweight structures, wearable technology and assistive tech, and in how designs are turned into real parts.
 - Looking for an engineering internship in Ireland in summer 2027 where I can design, build and test.
 
-## Highlights (from LinkedIn headline)
+## Highlights
+- Trinity Entrance Exhibition Award 2025/26
 - All Ireland Scholar '25
 - Junior Academy of Sciences of Ukraine (Maths)
 - CAD, 3D printing, RC aircraft builds, manufacturing
