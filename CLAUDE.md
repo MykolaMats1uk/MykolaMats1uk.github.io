@@ -74,6 +74,7 @@ Engineering report meets drawing sheet: clean and technical, not generic.
 - Type: Archivo (`--display`) for headings, IBM Plex Sans (`--sans`) for body text, navigation and buttons, IBM Plex Mono (`--mono`) only for data: specs, dates, table labels, figure labels and meta lines. Never use monospace as decoration.
 - Inner pages (About, Projects and each project) open with a dark photo header band (`.page-head`, one background per page via `.page-head--<name>`), followed by report-style sections (`.doc-section`): heading in a sticky left column, content on the right on desktop.
 - Project pages: breadcrumb, title, one-line summary and the "title block" table (status, dates, role, key specs) in the header band, then the cover figure, numbered figures with captions, and previous/next project links (`.pager`) at the bottom.
+- Galleries: figures go in `.gallery-row` pairs, each `<figure style="--r: W/H">` carrying the photo's aspect ratio, so both photos in a row share one height with no blank space. Show whole photos; never force them into fixed 4:3 or 16:9 frames.
 - Education, experience and teams use timeline entries (`.entry`).
 - Copy is first person, plain and specific. Rewording facts is fine; adding new facts is not.
 - Status is written out as "Finished" or "In progress", never shown by colour alone.
