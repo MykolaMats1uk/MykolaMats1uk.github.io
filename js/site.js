@@ -8,6 +8,33 @@
 (function () {
   'use strict';
 
+  // Header: slides away while scrolling down so it never covers content, and comes
+  // back as soon as the visitor scrolls up, reaches the top, or tabs into it.
+  // This is navigation, not decoration, so it also runs with reduced motion (without
+  // the slide, see css/style.css).
+  var siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    var lastY = window.scrollY;
+    var headerTicking = false;
+    var updateHeader = function () {
+      headerTicking = false;
+      var y = window.scrollY;
+      var delta = y - lastY;
+      if (y < siteHeader.offsetHeight || siteHeader.contains(document.activeElement)) {
+        siteHeader.classList.remove('is-hidden');
+      } else if (delta > 6) {
+        siteHeader.classList.add('is-hidden');
+      } else if (delta < -6) {
+        siteHeader.classList.remove('is-hidden');
+      }
+      if (Math.abs(delta) > 6) lastY = y;
+    };
+    window.addEventListener('scroll', function () {
+      if (!headerTicking) { headerTicking = true; window.requestAnimationFrame(updateHeader); }
+    }, { passive: true });
+    siteHeader.addEventListener('focusin', function () { siteHeader.classList.remove('is-hidden'); });
+  }
+
   if (!window.gsap || !window.ScrollTrigger || !window.Lenis) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
