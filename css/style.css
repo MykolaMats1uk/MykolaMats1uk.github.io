@@ -83,8 +83,16 @@ img { display: block; max-width: 100%; height: auto; }
   position: sticky;
   top: 0;
   z-index: 5;
-  background: rgba(251, 246, 240, 0.94);
+  background: var(--bg);              /* solid, so nothing shows through it */
   border-bottom: 1px solid var(--line);
+  transition: transform 0.3s ease;
+}
+
+/* Hidden while scrolling down, back as soon as the visitor scrolls up (js/site.js) */
+.site-header.is-hidden { transform: translateY(-100%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header { transition: none; }
 }
 
 .site-header .wrap {

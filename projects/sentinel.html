@@ -8,8 +8,8 @@
   <link rel="icon" href="data:,">
   <link rel="preload" href="../fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../css/style.css?v=10">
-  <link rel="stylesheet" href="../css/explode.css?v=3">
+  <link rel="stylesheet" href="../css/style.css?v=11">
+  <link rel="stylesheet" href="../css/explode.css?v=9">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -107,93 +107,98 @@
           <li><b>Ventilation and sound.</b> Openings in the shell let room air reach the sensors, so readings reflect the space rather than the inside of the robot, and let the buzzer be heard.</li>
           <li><b>Split bodies.</b> Each body is divided into three or four printed sections, which cuts down on support material and saves filament.</li>
         </ul>
-        <div class="gallery">
-        <div class="gallery-row">
-          <figure style="--r: 1.036">
-            <img src="../images/sentinel/cad-sensor-robot-front.jpg" width="728" height="703" loading="lazy" alt="SolidWorks model of Scout from the front: a round head with an opening for the face screen, a body with a speaker grille and two short arms.">
-            <figcaption><b>Fig. 2</b> · Scout, front: the round opening holds the face screen; the grille lets sound out and room air in.</figcaption>
-          </figure>
-          <figure style="--r: 0.981">
-            <img src="../images/sentinel/cad-sensor-robot-base.jpg" width="583" height="594" loading="lazy" alt="SolidWorks model of Scout seen from below, showing the open base of the body.">
-            <figcaption><b>Fig. 3</b> · Scout from below: the open base of the body.</figcaption>
-          </figure>
-        </div>
-        <div class="gallery-row">
-          <figure style="--r: 1.27">
-            <img src="../images/sentinel/cad-sensor-robot-sections.jpg" width="813" height="640" loading="lazy" alt="SolidWorks model of Scout from behind, with one body section outlined to show how the body is split into printed parts.">
-            <figcaption><b>Fig. 4</b> · The body is split into separate sections to cut down on support material.</figcaption>
-          </figure>
-          <figure style="--r: 1.009">
-            <img src="../images/sentinel/cad-dashboard-robot-front.jpg" width="770" height="763" loading="lazy" alt="SolidWorks model of Sentinel: a 7-inch screen in a cover, mounted at an angle on a rounded body with arms and feet.">
-            <figcaption><b>Fig. 5</b> · Sentinel: the 7-inch screen sits in a dedicated cover on top of the body.</figcaption>
-          </figure>
-        </div>
-        <div class="gallery-row">
-          <figure style="--r: 1.051">
-            <img src="../images/sentinel/cad-dashboard-robot-back.jpg" width="704" height="670" loading="lazy" alt="SolidWorks model of Sentinel from behind, showing the back of the screen cover and openings in the body.">
-            <figcaption><b>Fig. 6</b> · Sentinel from behind: the screen cover and openings in the body.</figcaption>
-          </figure>
-          <figure style="--r: 1.436">
-            <img src="../images/sentinel/cad-screen-mount-detail.jpg" width="583" height="406" loading="lazy" alt="Close-up of the screen cover corner in SolidWorks, showing a small screw mount that holds the display.">
-            <figcaption><b>Fig. 7</b> · Detail of the screen cover: a screw mount that holds the display in place.</figcaption>
-          </figure>
-        </div>
-        </div>
       </div>
     </section>
 
     </div>
 
-    <section class="explode" id="exploded-view" aria-labelledby="explode-title">
+    <div class="explode-pair" id="exploded-view">
       <div class="wrap explode-intro">
         <h2 id="explode-title">Exploded view</h2>
-        <p>Sentinel's SolidWorks model, taken apart into its main parts.<span class="explode-hint"> The parts separate as you scroll.</span></p>
-        <a class="explode-skip" href="#build">Skip the exploded view</a>
+        <p>The SolidWorks models of both robots, taken apart into their main parts.<span class="explode-hint"> The parts separate as you scroll.</span></p>
+        <a class="explode-skip" href="#build">Skip the exploded views</a>
       </div>
-      <div class="explode-track">
-        <div class="explode-stage">
-          <div class="wrap explode-grid">
+
+      <section class="explode" data-robot="sentinel" aria-labelledby="explode-sentinel">
+        <div class="wrap explode-grid">
+          <h3 class="explode-title" id="explode-sentinel">Sentinel</h3>
           <figure class="explode-figure">
-            <div class="explode-canvas">
-            <img class="explode-layer" src="../images/sentinel/explode/01-rpi.webp" width="647" height="793" loading="lazy" decoding="async" data-part="rpi" style="--shift: 0.3" alt="Raspberry Pi 4, shown as a simplified placeholder block, which sits inside Sentinel's body.">
-            <img class="explode-layer" src="../images/sentinel/explode/03-bottom.webp" width="647" height="793" loading="lazy" decoding="async" data-part="bottom" style="--shift: 0.55" alt="Bottom ring of Sentinel with its two feet.">
-            <img class="explode-layer" src="../images/sentinel/explode/02-body.webp" width="647" height="793" loading="lazy" decoding="async" data-part="body" style="--shift: 0" alt="Body shell of Sentinel: the rounded body with two arms and, on top, the rear housing for the screen with four screw bosses.">
-            <img class="explode-layer" src="../images/sentinel/explode/04-screen.webp" width="647" height="793" loading="lazy" decoding="async" data-part="screen" style="--shift: -0.32" alt="The 7-inch display panel with four mounting tabs.">
-            <img class="explode-layer" src="../images/sentinel/explode/05-cover.webp" width="647" height="793" loading="lazy" decoding="async" data-part="cover" style="--shift: -0.66" alt="Screen bezel: the rectangular frame that covers the edge of the display.">
+            <div class="explode-canvas" style="--ratio: 0.8159; --mt: 0.66; --mb: 0.55; --ml: 0; --mr: 0">
+              <img class="explode-layer" src="../images/sentinel/explode/01-rpi.webp" width="647" height="793" loading="lazy" decoding="async" data-part="rpi" data-dir="down" style="--dx: 0.0; --dy: 0.3" alt="Raspberry Pi 4, shown as a simplified placeholder block, which sits inside Sentinel's body.">
+              <img class="explode-layer" src="../images/sentinel/explode/03-bottom.webp" width="647" height="793" loading="lazy" decoding="async" data-part="bottom" data-dir="down" style="--dx: 0.0; --dy: 0.55" alt="Bottom ring of Sentinel with its two feet.">
+              <img class="explode-layer" src="../images/sentinel/explode/02-body.webp" width="647" height="793" loading="lazy" decoding="async" data-part="body" data-dir="none" style="--dx: 0; --dy: 0" alt="Body shell of Sentinel: the rounded body with two arms and, on top, the rear housing for the screen with four screw bosses.">
+              <img class="explode-layer" src="../images/sentinel/explode/04-screen.webp" width="647" height="793" loading="lazy" decoding="async" data-part="screen" data-dir="up" style="--dx: 0.0; --dy: -0.32" alt="The 7-inch display panel with four mounting tabs.">
+              <img class="explode-layer" src="../images/sentinel/explode/05-cover.webp" width="647" height="793" loading="lazy" decoding="async" data-part="cover" data-dir="up" style="--dx: 0.0; --dy: -0.66" alt="Screen bezel: the rectangular frame that covers the edge of the display.">
             </div>
             <figcaption class="visually-hidden">Exploded view of Sentinel: from top to bottom, the screen bezel, the display panel, the body shell, the Raspberry Pi and the bottom ring with its feet.</figcaption>
           </figure>
           <ol class="explode-parts" aria-label="Sentinel parts, top to bottom">
             <li class="explode-part" data-part="cover" data-anchor="0.344" data-reveal="0.05">
               <span class="explode-num">05</span>
-              <h3 class="explode-name">Screen bezel</h3>
+              <h4 class="explode-name">Screen bezel</h4>
               <p class="explode-desc"><span class="todo">TODO: description</span></p>
             </li>
             <li class="explode-part" data-part="screen" data-anchor="0.347" data-reveal="0.3">
               <span class="explode-num">04</span>
-              <h3 class="explode-name">Display panel</h3>
+              <h4 class="explode-name">Display panel</h4>
               <p class="explode-desc"><span class="todo">TODO: description</span></p>
             </li>
             <li class="explode-part" data-part="body" data-anchor="0.66" data-reveal="0.55">
               <span class="explode-num">02</span>
-              <h3 class="explode-name">Body shell</h3>
+              <h4 class="explode-name">Body shell</h4>
               <p class="explode-desc"><span class="todo">TODO: description</span></p>
             </li>
             <li class="explode-part" data-part="rpi" data-anchor="0.705" data-reveal="0.42">
               <span class="explode-num">01</span>
-              <h3 class="explode-name">Raspberry Pi (simplified placeholder model)</h3>
+              <h4 class="explode-name">Raspberry Pi (simplified placeholder model)</h4>
               <p class="explode-desc"><span class="todo">TODO: description</span></p>
             </li>
             <li class="explode-part" data-part="bottom" data-anchor="0.839" data-reveal="0.15">
               <span class="explode-num">03</span>
-              <h3 class="explode-name">Bottom ring and feet</h3>
+              <h4 class="explode-name">Bottom ring and feet</h4>
               <p class="explode-desc"><span class="todo">TODO: description</span></p>
             </li>
           </ol>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="explode" data-robot="scout" aria-labelledby="explode-scout">
+        <div class="wrap explode-grid">
+          <h3 class="explode-title" id="explode-scout">Scout: the small robot</h3>
+          <figure class="explode-figure">
+            <div class="explode-canvas" style="--ratio: 0.7335; --mt: 0.3; --mb: 0.3; --ml: 0.45; --mr: 0.45">
+              <img class="explode-layer" src="../images/sentinel/explode-small/01-bottom.webp" width="567" height="773" loading="lazy" decoding="async" data-part="bottom" data-dir="down" style="--dx: 0.0; --dy: 0.3" alt="Bottom of Scout: a shallow round base with a notch in its rim.">
+              <img class="explode-layer" src="../images/sentinel/explode-small/03-ring.webp" width="567" height="773" loading="lazy" decoding="async" data-part="ring" data-dir="up" style="--dx: 0.0; --dy: -0.3" alt="A small ring that sits hidden inside Scout's head when assembled.">
+              <img class="explode-layer" src="../images/sentinel/explode-small/04-back.webp" width="567" height="773" loading="lazy" decoding="async" data-part="back" data-dir="right" style="--dx: 0.45; --dy: 0.0" alt="Back shell of Scout: the rear half of the head and body, seen from the inside.">
+              <img class="explode-layer" src="../images/sentinel/explode-small/02-front.webp" width="567" height="773" loading="lazy" decoding="async" data-part="front" data-dir="left" style="--dx: -0.45; --dy: 0.0" alt="Front shell of Scout: the front half of the round head with the face opening, the body with the speaker grille, and the arms.">
+            </div>
+            <figcaption class="visually-hidden">Exploded view of Scout: the ring rises out of the head, the front and back shells split apart to the sides, and the bottom drops away.</figcaption>
+          </figure>
+          <ol class="explode-parts" aria-label="Scout parts, top to bottom">
+            <li class="explode-part" data-part="ring" data-anchor="0.074" data-reveal="0.1">
+              <span class="explode-num">03</span>
+              <h4 class="explode-name">Ring</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="front" data-anchor="0.4" data-reveal="0.25">
+              <span class="explode-num">02</span>
+              <h4 class="explode-name">Front shell</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="back" data-anchor="0.62" data-reveal="0.4">
+              <span class="explode-num">04</span>
+              <h4 class="explode-name">Back shell</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+            <li class="explode-part" data-part="bottom" data-anchor="0.873" data-reveal="0.55">
+              <span class="explode-num">01</span>
+              <h4 class="explode-name">Bottom</h4>
+              <p class="explode-desc"><span class="todo">TODO: description</span></p>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </div>
 
     <div class="wrap doc">
     <section class="doc-section" id="build">
@@ -213,11 +218,11 @@
         <div class="gallery-row">
           <figure style="--r: 1.1">
             <img src="../images/sentinel/sentinel-dashboard.jpg" width="1320" height="1200" loading="lazy" alt="Close-up of Sentinel's 7-inch screen: a smiling face marked OKAY next to TVOC, eCO2, temperature and humidity panels.">
-            <figcaption><b>Fig. 8</b> · Sentinel's dashboard: a reactive face beside live TVOC, eCO2, temperature and humidity readings.</figcaption>
+            <figcaption><b>Fig. 2</b> · Sentinel's dashboard: a reactive face beside live TVOC, eCO2, temperature and humidity readings.</figcaption>
           </figure>
           <figure style="--r: 0.855">
             <img src="../images/sentinel/scout.jpg" width="1000" height="1170" loading="lazy" alt="Scout, 3D printed in white PLA with a black base, held in one hand before its face screen was fitted.">
-            <figcaption><b>Fig. 9</b> · Scout printed in white and black PLA, before its round face screen was fitted.</figcaption>
+            <figcaption><b>Fig. 3</b> · Scout printed in white and black PLA, before its round face screen was fitted.</figcaption>
           </figure>
         </div>
         </div>
@@ -273,7 +278,7 @@
   <script src="../js/vendor/gsap.min.js" defer></script>
   <script src="../js/vendor/ScrollTrigger.min.js" defer></script>
   <script src="../js/vendor/lenis.min.js" defer></script>
-  <script src="../js/site.js?v=10" defer></script>
-  <script src="../js/explode.js?v=3" defer></script>
+  <script src="../js/site.js?v=11" defer></script>
+  <script src="../js/explode.js?v=5" defer></script>
 </body>
 </html>
